@@ -1,12 +1,12 @@
 # Chart Collection
-A collection of all the chart objects on a worksheet. 
+Represents a collection of all the charts in a workbook. 
 
 ## [Properties](#get-chart-collection)
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|`count`| Number   | Number of objects in the collection.|charts.count|
-|`items`| [Chart](chart.md) Array| A collection of all the chart objects that are part of the workbook|[charts.item] |
+|`count`| Number   | Returns the number of charts in the collection.|charts.count|
+|`items`| [Chart](chart.md) array| Returns a collection of all the charts in a workbook.|[charts.item] |
 
 ## Relationships
 
@@ -18,16 +18,16 @@ The chart has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[add(type: string, sourceData: string, seriesBy: string)](#addtype-string-sourcedata-string-seriesby-string)| [Chart](chart.md) Object              |Creates a new chart. The new chart becomes the active workbook. ||
-|[getItem(name: string)](#getitemname-string)| [Chart](chart.md) Object     |Retrieve a chart object using its name||
-|[getItemAt(index: number)](#getitematindex-number)| [Chart](chart.md) Object    |Retrieve a chart based on its position in the items[] array.||
+|[add(type: string, sourceData: string, seriesBy: string)](#addtype-string-sourcedata-string-seriesby-string)| [Chart](chart.md) object              |Creates a new chart. The new chart becomes the active workbook. ||
+|[getItem(name: string)](#getitemname-string)| [Chart](chart.md) object     |Gets a Chart object by id.||
+|[getItemAt(index: number)](#getitematindex-number)| [Chart](chart.md) object    |Gets a Chart object based on its position in the items[] array.||
 
 
 ## API Specification 
 
 ### Get Chart Collection
 
-Get the chart collection. 
+Gets the collection of all the charts in a workbook.
 
 #### Syntax
 ```js
@@ -38,8 +38,8 @@ worksheetObject.charts;
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|`count`| Number   | Number of objects in the collection.|charts.count|
-|`items`| Object[] | A collection of all the chart objects that are part of the workbook|[charts.item] |
+|`count`| Number   | Returns the number of charts in the collection.|charts.count|
+|`items`| [Chart](chart.md) array| Returns a collection of all the charts in a workbook.|[charts.item] |
 
 
 #### Returns
@@ -77,7 +77,7 @@ ctx.executeAsync().then(function () {
 
 ### add(type: string, sourceData: string, seriesBy: string)
 
-Add a new chart to the workbook. 
+Creates a new chart in the workbook. 
 
 #### Syntax
 ```js
@@ -88,9 +88,9 @@ chartsCollection.add(type, sourceData, seriesBy);
 
 | Parameter         | Value    |Description|
 |:-----------------|:--------|:----------|
-| `type` | String | A String value that represents the type of a chart.  |
-| `sourceData`  | String | A String that represents an address or name of the Range object as the data source.|
-| `seriesBy` | String |  A String that represents the way columns or rows are used as data series on the chart. Can be `auto`, `Rows` or `Columns`.|
+| `type` | String | The chart type.  |
+| `sourceData`  | String | The address or name of the range that contains the source data.|
+| `seriesBy` | String | Specifies the way columns or rows are used as data series on the chart. Can be one of the following: `Rows`, `Columns` or `Auto`.|
 
 #### Returns
 [chart](chart.md) object.
@@ -112,7 +112,7 @@ ctx.executeAsync().then(function () {
 
 ### getItem(name: string)
 
-Get chart object properties based on name.
+Gets the properties of the chart object by name.
 
 #### Syntax
 ```js
@@ -123,7 +123,7 @@ chartsCollection.getItem(name);
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `name`| String | Required. chart name. 
+ `name`| String | Required. The name of the chart. 
 
 #### Returns
 
@@ -143,7 +143,7 @@ ctx.executeAsync().then(function () {
 
 ### getItemAt(index: number)
 
-Get chart object properties based on its position in the items[] array. 
+Gets the properties of the chart object based on its position in the items[] array. 
 
 #### Syntax
 ```js
@@ -154,7 +154,7 @@ chartsCollection.getItemAt(index);
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `index`| Number | Required. Index or position in the items[]. Zero indexed.
+ `index`| Number | Required. Index or position of the Chart object in the items[] array. Zero indexed.
 
 #### Returns
 

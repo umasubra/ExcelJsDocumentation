@@ -1,5 +1,5 @@
 # Chart Fill Format
-Represents the interior/background of an object.
+Represents the fill formatting for a chart element.
 
 ## Properties
 None.
@@ -11,14 +11,14 @@ None
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[setSolidColor(color: string)](#setsolidcolorcolor-string)|void |Sets the solid color of a chart element.
+|[setSolidColor(color: string)](#setsolidcolorcolor-string)|void |Sets the fill formatting of a chart element to a uniform color.
 |[clear()](#clear)|void |Clear the fill format of a chart element.
 
 
 
 ### setSolidColor(color: string)
 
-Sets the solid color of a chart element.
+Sets the fill formatting of a chart element to a uniform color.
 
 #### Syntax
 ```js
@@ -28,7 +28,7 @@ ChartObject.format.fill.setSolidColor("#FF0000");
 #### Parameters
 | Property         | Type    |Description|
 |:-----------------|:--------|:----------|
-|`color`|String|HTML color code representation of the text color. HTML color codes are strings that represents hexadecimal triplets of red, green, and blue values (#RRGGBB). e.g., `#FF0000` represents Red. ('255' red, '0' green, and '0' blue) |
+|`color`|String|HTML color code representation of the text color. HTML color codes are strings that represents hexadecimal triplets of red, green, and blue values (#RRGGBB). For example, `#FF0000` represents Red. ('255' red, '0' green, and '0' blue). |
 
 
 #### Returns
@@ -51,7 +51,7 @@ ctx.executeAsync().then(function () {
 
 ### clear()
 
-Clear the line format of a chart eleme
+Clear the fill format of a chart element.
 
 #### Syntax
 Use chart major gridlines on value axis as an example.

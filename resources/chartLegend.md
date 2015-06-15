@@ -5,13 +5,13 @@ Represents the legend in a chart. Each chart can have only one legend.
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-| `visible` | Boolean |A boolean value the represents the visibility of a ChartLegend object. If visible is set to be ture, the legend will be visible on the chart. |  |
-| `position` | String |Returns or sets a Legend Position value that represents the position of the legend on the chart, including `Top`,`Bottom`,`Cornor`,`Left`,`Right`,'Custom','Invalid'| Legend.position |
-| `overlay` | Boolean |True if the legend with be overlapping with the chart. | Legend.IncludeInLayout |
+| `visible` | Boolean |Returns or sets a boolean value the represents the visibility of a ChartLegend object. If visible is set to be ture, the legend will be visible on the chart. |  |
+| `position` | String |Returns or sets a legend position value that represents the position of the legend on the chart. Possible values are: `Top`,`Bottom`,`Cornor`,`Left`,`Right`,'Custom', and'Invalid'| Legend.position |
+| `overlay` | Boolean |Returns or sets a boolean. True if the legend with be overlapping with the chart. | Legend.IncludeInLayout |
 
 
 ## Relationships
-The Chart Legend has the following relationships defined:
+The Chart Legend object has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
@@ -24,18 +24,18 @@ None.
 ## API Specification 
 ### Get Chart Legend
 
-Gets a ChartLegend sobject.
+Gets the legend in a chart.
 
 #### Syntax
 ```js
 chartObject.legend;
 ```
 #### Properties
-| Property         | Type    |Description| 
-|:-----------------|:--------|:----------|
-| `visible` | Boolean |A boolean value the represents the visibility of a ChartLegend object. If visible is set to be ture, the legend will be visible on the chart. |  
-| `position` | String |Returns or sets a Legend Position value that represents the position of the legend on the chart, including `Top`,`Bottom`,`Cornor`,`Left`,`Right`,'Custom','Invalid'| 
-| `overlay` | Boolean |True if the legend with be overlapping with the chart. | 
+| Property         | Type    |Description|Notes |
+|:-----------------|:--------|:----------|:-----|
+| `visible` | Boolean |Returns or sets a boolean value the represents the visibility of a ChartLegend object. If visible is set to be ture, the legend will be visible on the chart. |  |
+| `position` | String |Returns or sets a legend position value that represents the position of the legend on the chart. Possible values are: `Top`,`Bottom`,`Cornor`,`Left`,`Right`,'Custom', and'Invalid'| Legend.position |
+| `overlay` | Boolean |Returns or sets a boolean. True if the legend with be overlapping with the chart. | Legend.IncludeInLayout | 
 
 #### Returns
 
@@ -59,7 +59,7 @@ ctx.executeAsync().then(function () {
 
 ### Set Chart Legend
 
-Set a ChartLegend properties.
+Set the properties of the legend.
 
 #### Syntax
 
@@ -70,11 +70,11 @@ chartObject.legend.overlay = true;
 ```
 
 #### Properties
-| Property         | Type    |Description| 
-|:-----------------|:--------|:----------|
-| `visible` | Boolean |A boolean value the represents the visibility of a ChartLegend object. If visible is set to be ture, the legend will be visible on the chart. |  
-| `position` | String |Returns or sets a Legend Position value that represents the position of the legend on the chart, including `Top`,`Bottom`,`Cornor`,`Left`,`Right`,'Custom','Invalid'| 
-| `overlay` | Boolean |True if the legend with be overlapping with the chart. | 
+| Property         | Type    |Description|Notes |
+|:-----------------|:--------|:----------|:-----|
+| `visible` | Boolean |Returns or sets a boolean value the represents the visibility of a ChartLegend object. If visible is set to be ture, the legend will be visible on the chart. |  |
+| `position` | String |Returns or sets a legend position value that represents the position of the legend on the chart. Possible values are: `Top`,`Bottom`,`Cornor`,`Left`,`Right`,'Custom', and'Invalid'| Legend.position |
+| `overlay` | Boolean |Returns or sets a boolean. True if the legend with be overlapping with the chart. | Legend.IncludeInLayout |
 
 #### Returns
 [ChartLegend](chartLegend.md) object. 

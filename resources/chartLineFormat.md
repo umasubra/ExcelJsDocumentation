@@ -5,7 +5,7 @@ Provides access to the Office Art formatting for chart line elements.
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|color| String | HTML color code representing the color of lines in the chart. |Chart.ChartFormat.LineFormat.Color's representation in HTML color code.|
+|color| String | Returns or sets the color of lines in the chart using HTML color code. |Chart.ChartFormat.LineFormat.|
 
 ## Relationships
 None.
@@ -13,12 +13,12 @@ None.
 ## Methods
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[clear()](#clear)|void |Clear the line format of a chart element.
+|[clear()](#clear)|void |Clears the line formatting in a chart element.
 
 ## API Specification 
 ### clear()
 
-Clear the line format of a chart eleme
+Clear the line formatting in a chart element.
 
 #### Syntax
 Use chart major gridlines on value axis as an example.
@@ -35,7 +35,7 @@ Nothing.
 
 #### Examples
 
-##### Clear the line format of the major Gridlines on value axis of the Chart named "Chart1"
+##### Clears the line format of the major Gridlines on value axis of the Chart named "Chart1"
 
 ```js
 var ctx = new Excel.ExcelClientContext();
@@ -50,7 +50,7 @@ ctx.executeAsync().then(function () {
 
 ### Set Line Format
 
-Update a chart line formatting.
+Updates the line formatting.
 
 #### Syntax
 Use chart major gridlines on value axis as an example.

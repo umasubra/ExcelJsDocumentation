@@ -1,17 +1,17 @@
 # Chart Font
 
-This object represents the font attributes (font name, font size, color, and so on) for an object. 
+Represents the font attributes (font name, font size, color, and so on) for a chart element. 
 
 ## [Properties](#set-font)
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|`name`|String|Font name (e.g., "Calibri")||
-|`size`|number|Size of the font (e.g., 11)||
-|`color`|String|HTML color code representation of the text color. HTML color codes are strings that represents hexadecimal triplets of red, green, and blue values (#RRGGBB). e.g., `#FF0000` represents Red. ('255' red, '0' green, and '0' blue) ||
-|`italic`|Boolean|Represents the bold status of italic. true if the font style is italic||
-|`bold`|Boolean|Represents the bold status of font. true if the font is bold. ||
-|`underline`|Boolean|Type of underline applied to the font. Can be one of the following constants. Possible Values: `None`, `Single`, `Double`, `SingleAccounting`, `DoubleAccounting`||
+|`name`|String|Returns or sets the name of the font. For example, `Calibri`.||
+|`size`|number|Returns or sets the size of the font. For example, 11.||
+|`color`|String|Returns or sets the text color using HTML color code representation. HTML color codes are strings that represents hexadecimal triplets of red, green, and blue values (#RRGGBB). For example, `#FF0000` represents Red. ('255' red, '0' green, and '0' blue). ||
+|`italic`|Boolean|A boolean that represents the bold status of italic. True if the font style is italic.||
+|`bold`|Boolean|A boolean that represents the bold status of the font. True if the font is bold. ||
+|`underline`|Boolean|Returns or sets the type of underline applied to the font. Can be one of the following constants: `None`, `Single`, `Double`, `SingleAccounting`, `DoubleAccounting`||
 
 ## Relationships
 None
@@ -23,7 +23,7 @@ None.
 
 ### Set Font
 
-Update a chart font formatting.
+Update the font formatting for a chart element.
 
 #### Syntax
 Use chart title as an example.
@@ -38,14 +38,14 @@ chartObject.title.format.font.underline = false;
 ```
 
 #### Properties
-| Property         | Type    |Description|
-|:-----------------|:--------|:----------|
-|`name`|String|Font name (e.g., "Calibri")|
-|`size`|number|Size of the font (e.g., 11)|Range.Font.Size|
-|`color`|String|HTML color code representation of the text color. HTML color codes are strings that represents hexadecimal triplets of red, green, and blue values (#RRGGBB). e.g., `#FF0000` represents Red. ('255' red, '0' green, and '0' blue) |
-|`italic`|Boolean|Represents the bold status of italic. true if the font style is italic|
-|`bold`|Boolean|Represents the bold status of font. true if the font is bold. |
-|`underline`|Boolean|Type of underline applied to the font. Can be one of the following constants. Possible Values: `None`, `Single`, `Double`, `SingleAccounting`, `DoubleAccounting`|
+| Property         | Type    |Description|Notes |
+|:-----------------|:--------|:----------|:-----|
+|`name`|String|Returns or sets the name of the font. For example, `Calibri`.||
+|`size`|number|Returns or sets the size of the font. For example, 11.||
+|`color`|String|Returns or sets the text color using HTML color code representation. HTML color codes are strings that represents hexadecimal triplets of red, green, and blue values (#RRGGBB). For example, `#FF0000` represents Red. ('255' red, '0' green, and '0' blue). ||
+|`italic`|Boolean|A boolean that represents the bold status of italic. True if the font style is italic.||
+|`bold`|Boolean|A boolean that represents the bold status of the font. True if the font is bold. ||
+|`underline`|Boolean|Returns or sets the type of underline applied to the font. Can be one of the following constants: `None`, `Single`, `Double`, `SingleAccounting`, `DoubleAccounting`||
 
 #### Returns
 

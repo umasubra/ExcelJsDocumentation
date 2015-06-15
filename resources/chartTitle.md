@@ -1,20 +1,20 @@
 # Chart Title
-Represents a chart title object of a chart. A ChartTitle object specifies the text, visibility and formating of the chart title.
+Represents the title of a chart. 
 
 ## [Properties](#get-chart-title)
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-| `text` | String |A String value that represents the title text of a chart. When a title text is set, the display property will be automaticlly set to top and the chart title will be displayed on top of the chart without overlapping. | Chart.ChartTitle |
-| `visible` | Boolean |A boolean value the represents the visibility of a chart title object. If visible is set to be ture, the chart title will be visible on the chart. |  |
-| `overlay` | Boolean |True if the title overlays the chart. | Chart.ChartTitle.Position |
+| `text` | String |Returns or sets the title of a chart. When a title is set, the display property will be automatically set to Top and the chart title will be displayed on the top of the chart without overlapping. | Chart.ChartTitle |
+| `visible` | Boolean |Returns or seta a boolean that represents the visibility of a chart title object. If set to true, the chart title will be visible on the chart. |  |
+| `overlay` | Boolean |Returns or sets a boolean. True if the title overlays the chart. | Chart.ChartTitle.Position |
 
 ## Relationships
-The ChartTitle has the following relationships defined:
+The ChartTitle object has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-| `format`          |[ChartTitleFormat](chartTitleFormat.md) Object | Represents the format of a chart title, which includes fill(interior/background) and font formatting.
+| `format`          |[ChartTitleFormat](chartTitleFormat.md) object | Represents the formatting of a chart title, which includes fill(interior/background) and font formatting.
      
 ## Methods
 None.
@@ -23,18 +23,18 @@ None.
 
 ### Get Chart Title
 
-Gets a ChartTitle object.
+Gets the title of a chart.
 
 #### Syntax
 ```js
 chartObject.title;
 ```
 #### Properties
-| Property         | Type    |Description| 
-|:-----------------|:--------|:----------|
-| `text` | String |A String value that represents the title text of a chart. When a title text is set, the display property will be automaticlly set to top and the chart title will be displayed on top of the chart without overlapping. | 
-| `visible` | Boolean |A boolean value the represents the visibility of a chart title object. If visible is set to be ture, the chart title will be visible on the chart. |  |
-| `overlay` | Boolean |True if the title overlays the chart. | 
+| Property         | Type    |Description|Notes |
+|:-----------------|:--------|:----------|:-----|
+| `text` | String |Returns or sets the title of a chart. When a title is set, the display property will be automatically set to Top and the chart title will be displayed on the top of the chart without overlapping. | Chart.ChartTitle |
+| `visible` | Boolean |Returns or seta a boolean that represents the visibility of a chart title object. If set to true, the chart title will be visible on the chart. |  |
+| `overlay` | Boolean |Returns or sets a boolean. True if the title overlays the chart. | Chart.ChartTitle.Position |
 
 #### Returns
 
@@ -58,7 +58,7 @@ ctx.executeAsync().then(function () {
 
 ### Set Chart Title
 
-Set chart title properties including text and visibility.
+Sets the properties of a chart title, including text and visibility.
 
 #### Syntax
 
@@ -69,11 +69,11 @@ chartObject.title.overlay=true;
 ```
 
 #### Properties
-| Property         | Type    |Description| 
-|:-----------------|:--------|:----------|
-| `text` | String |A String value that represents the title text of a chart. When a title text is set, the display property will be automaticlly set to top and the chart title will be displayed on top of the chart without overlapping. | 
-| `visible` | Boolean |A boolean value the represents the visibility of a chart title object. If visible is set to be ture, the chart title will be visible on the chart. |  |
-| `overlay` | Boolean |True if the title overlays the chart. | 
+| Property         | Type    |Description|Notes |
+|:-----------------|:--------|:----------|:-----|
+| `text` | String |Returns or sets the title of a chart. When a title is set, the display property will be automatically set to Top and the chart title will be displayed on the top of the chart without overlapping. | Chart.ChartTitle |
+| `visible` | Boolean |Returns or seta a boolean that represents the visibility of a chart title object. If set to true, the chart title will be visible on the chart. |  |
+| `overlay` | Boolean |Returns or sets a boolean. True if the title overlays the chart. | Chart.ChartTitle.Position |
 
 #### Returns
 

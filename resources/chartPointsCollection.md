@@ -1,12 +1,12 @@
 # Chart Point Collection
-A collection of all the ChartPoint objects of a chart. 
+A collection of all the ChartPoint objects in a chart. 
 
 ## [Properties](#get-chartpoint-collection)
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|`count`| Number   | Number of objects in the collection.||
-|`items`| [Chart Point](chartPoint.md) Array | A collection of all the chart objects that are part of the workbook| |
+|`count`| Number   | Returns the number of chart points in the collection.||
+|`items`| [Chart Point](chartPoint.md) array | Returns a collection of all the chart points  in a chart.| |
 
 ## Relationships
 
@@ -14,18 +14,18 @@ None
 
 ## Methods
 
-The chart has the following methods defined:
+The chartPointsColleciton object has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[getItemAt(index: number)](#getitematindex-number)| [ChartPoint](chartPoint.md)     |Retrieve a ChartPoint Object based on its position in the items[] array.||
+|[getItemAt(index: number)](#getitematindex-number)| [ChartPoint](chartPoint.md)     |Gets a ChartPoint object based on its position in the items[] array.||
 
 
 ## API Specification 
 
 ### Get ChartPoint Collection
 
-Get the ChartPoint Collection. 
+Gets a collection of all the ChartPoint objects in a chart.
 
 #### Syntax
 ```js
@@ -34,10 +34,10 @@ chartObject.points;
 
 #### Properties
 
-| Property         | Type    |Description|
-|:-----------------|:--------|:----------|
-|`count`| Number   | Number of objects in the collection.|
-|`items`| Object[] | A collection of all the chart objects that are part of the workbook|
+| Property         | Type    |Description|Notes |
+|:-----------------|:--------|:----------|:-----|
+|`count`| Number   | Returns the number of chart points in the collection.||
+|`items`| [Chart Point](chartPoint.md) array | Returns a collection of all the chart points in a chart.| ||
 
 #### Returns
 
@@ -71,7 +71,7 @@ ctx.executeAsync().then(function () {
 
 ### getItemAt(index: number)
 
-Get chartPoint object properties based on its position in the items[] array. 
+Gets a ChartPoint object based on its position in the items[] array. 
 
 #### Syntax
 ```js
@@ -82,7 +82,7 @@ ChartPointsCollection.getItemAt(index);
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `index`| Number | Required. Index or position in the items[]. Zero indexed.
+ `index`| Number | Required. Index or position in the items[] array. Zero-indexed.
 
 #### Returns
 
@@ -90,7 +90,7 @@ Parameter       | Type  | Description
 
 #### Examples
 
-##### set the border color for the first points in the points collection
+##### Set the border color for the first points in the points collection
 ```js
 var ctx = new Excel.ExcelClientContext();
 var point = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").series.getItemAt(0).points;

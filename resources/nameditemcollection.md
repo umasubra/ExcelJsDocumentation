@@ -1,11 +1,11 @@
 # NamedItem Collection
-A collection of all the nameditem objects that are part of the workbook. 
+Represents the collection of all the [NamedItem](namedItem.md) objects that are part of the workbook. 
 
 ## [Properties](#get-nameditem-collection)
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|`count`| Number   | Number of objects in the collection.|nameditems.count|
+|`count`| Number   | Returns the number of named items in the collection..|nameditems.count|
 |`items`| [Named Item](nameditem.md) Array | A collection of all the nameditem objects that are part of the workbook|[nameditems.item] |
 
 ## Relationships
@@ -18,15 +18,15 @@ The nameditem collection has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[getItem(name: string)](#getitemname-string)| [Named Item](nameditem.md) Object      |Retrieve a nameditem object using its name||
-|[getItemAt(index: number)](#getitematindex-number)| [Named Item](nameditem.md) Object     |Retrieve a nameditem based on its position in the items[] array.||
+|[getItem(name: string)](#getitemname-string)| [Named Item](nameditem.md) Object      |Gets a NamedItem object by name.||
+|[getItemAt(index: number)](#getitematindex-number)| [Named Item](nameditem.md) Object     |Gets a NamedItem object based on its position in the items[] array.||
 
 
 ## API Specification 
 
 ### Get Nameditem Collection
 
-Get properties of the nameditem collection. 
+Gets the collection of all the [NamedItem](namedItem.md) objects that are part of the workbook.  
 
 #### Syntax
 ```js
@@ -37,7 +37,7 @@ nameditemCollection.property;
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|`count`| Number   | Number of objects in the collection.|nameditems.count|
+|`count`| Number   | Returns the number of named items in the collection..|nameditems.count|
 |`items`| [Named Item](nameditem.md) Array | A collection of all the nameditem objects that are part of the workbook|[nameditems.item] |
 
 
@@ -75,7 +75,7 @@ ctx.executeAsync().then(function () {
 
 ### getItem(name: string)
 
-Get nameditem object properties based on name.
+Gets a NamedItem object by name..
 
 #### Syntax
 ```js
@@ -105,7 +105,7 @@ ctx.executeAsync().then(function () {
 
 ### getItemAt(index: number)
 
-Get nameditem object properties based on its position in the items[] array. 
+Gets a NamedItem object based on its position in the items[] array.
 
 #### Syntax
 ```js

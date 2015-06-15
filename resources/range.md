@@ -1,52 +1,52 @@
 # Range
-Range represents a cell, a row, a column, a selection of cells containing one or more contiguous blocks of cells. 
+Represents a cell, a row, a column, a selection of cells containing one or more contiguous blocks of cells. 
 
 ## [Properties](#get-range)
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|`address`         |String         |Returns a String value that represents the range reference in A1 Style. **Address value will contain the Sheet reference (e.g., `Sheet1!A1:B4`)**|Range.Address|
+|`address`         |String         |Returns the range reference in A1 Style. **Address value will contain the Sheet reference (e.g., `Sheet1!A1:B4`)**|Range.Address|
 |`addressLocal`    |String         |Returns the range reference for the specified range in the language of the user.
-|`cellCount`       | Number          |Number of cells in the range|Range.Count|
+|`cellCount`       | Number          |Returns the number of cells in the range|Range.Count|
 |`columnIndex`     | Number          |Returns the number of the first column in the first area in the specified range. This is adjusted to be zero indexed. Read-only|Range.Column|
-|`columnCount`    | Number           |Returns the number of the first row of the first area in the range. This is adjusted to be zero indexed. Read-only|Range.Row|
-|`formulas`         |String[][]|Represents the object's formula in A1 style notation|Range.formula|
-|`formulasLocal`    |String[][]|Formula for the object, in the language of the user in A1 style notation|Range.FormulaLocal|
-|`numberFormat`    |String[][]|Value that represents the format code for the object|Range.NumberFormat
-|`rowcount`        | Number          |Returns the total number of columns in the Range selected. Read-only |Range.Column|
+|`columnCount`    | Number           |Returns the number of the first row of the first area in the range. This is adjusted to be zero-indexed. Read-only|Range.Row|
+|`formulas`         |String[][]|Represents the object's formula in A1 style notation.|Range.formula|
+|`formulasLocal`    |String[][]|Formula for the object, in the language of the user in A1 style notation.|Range.FormulaLocal|
+|`numberFormat`    |String[][]|Value that represents the format code for the object.|Range.NumberFormat
+|`rowcount`        | Number          |Returns the total number of columns in the Range selected. Read-only. |Range.Column|
 |`rowIndex`        | Number          |Returns the number of the first row of the first area in the range. This is adjusted to be zero indexed. Read-only|Range.Row|
 |`text`            |String[][]|Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel client will not affect the value returned by the API. |Range.Text|
-|`values`          |any[][]|Unformatted values of the specified range|Range.Value2|
+|`values`          |any[][]|Unformatted values of the specified range.|Range.Value2|
 
 ## Relationships
 Range has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|format        |[Range Format](rangeformat.md) Object  |Format object contains Range's Font, fill, Borders, Alignment, Style, etc. settings ||
-|[worksheet](#get-range-worksheet) |[Worksheet](worksheet.md) Object  |The worksheet containing the current range. ||
+|format        |[Range Format](rangeformat.md) Object  |Represents the format object that contains the range's font, fill, Borders, Alignment, Style, etc. settings. ||
+|[worksheet](#get-range-worksheet) |[Worksheet](worksheet.md) object  |Represents the worksheet containing the current range. ||
 
 
 ## Methods
 
-The Worksheet has the following methods defined:
+The Range has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[clear(applyTo: string)](#clearapplyto-string)| void     |Clear Range values, format, fill, border, etc. |   |
-|[delete()](#delete)| void     |Deletes the worksheet ||
+|[clear(applyTo: string)](#clearapplyto-string)| void     |Clears the entire object. |   |
+|[delete()](#delete)| void     |Deletes the range. ||
 |[getCell(row: number, column: number)](#getcellrow-number-column-number)| [Range](range.md) object |Returns a range containing the single cell specified by the zero-indexed row and column numbers          
-|[getEntireColumn()](#getentirecolumn)| [Range](range.md) object |Get an object that represents the entire column of the Range. This API is valid only if the subject range object is a single cell or a column of cells.| |
-|[getEntireRow()](#getentirerow)| [Range](range.md) object |Get an object that represents the entire row of the Range. This API is valid only if the subject range object is a single cell or a row of cells.| |
-|[getUsedRange()](#getusedrange)| [Range](range.md) object |Returns the used range of the Range.| |  
+|[getEntireColumn()](#getentirecolumn)| [Range](range.md) object |Gets an object that represents the entire column of the range. This API is valid only if the subject range object is a single cell or a column of cells.| |
+|[getEntireRow()](#getentirerow)| [Range](range.md) object |Gets an object that represents the entire row of the range. This API is valid only if the subject range object is a single cell or a row of cells.| |
+|[getUsedRange()](#getusedrange)| [Range](range.md) object |Returns the used range of the range.| |  
 |[insert(shift: string)](#insertshift-string)|void| Inserts a cell or a range of cells into the worksheet and shifts other cells away to make space.| |
-|[select()](#select)|void| Select the specified Range in the Excel UI.| |
+|[select()](#select)|void| Selects the specified range in the Excel UI.| |
 
 ## API Specification 
 
 
 ### clear(applyTo: string)
 
-Clear Range values, format, fill, border, etc.
+Clears the entire range object.
 
 #### Syntax
 
@@ -79,7 +79,7 @@ ctx.executeAsync().then();
 
 ### delete()
 
-Delete the Range data and clear the format and shift the cells.
+Deletes the range data,  clears the formatting, and shifts the cells.
 
 #### Syntax
 
@@ -90,7 +90,7 @@ rangeObject.delete(shift);
 
 Parameter       | Type   | Description
 --------------- | ------ | ------------
-shift| String | Specifies which way to shift the cells. Can be one of the following: `Left` or `Up`. If this argument is omitted, Microsoft Excel decides based on the shape of the range.
+shift| String | Specifies which way to shift the cells. Possible values are: `Left` or `Up`. If this argument is omitted, Microsoft Excel decides based on the shape of the range.
 
 #### Returns
 
@@ -110,9 +110,7 @@ ctx.executeAsync().then();
 
 ### getCell(row: number, column: number)
 
-Get the Cell (as a Range object) object based on row and column address relative to a Range. 
-
-Note that the returned object is a Range representing the single cell requested. The `address`, `columnIndex`, `rowIndex`, etc. property values of returned Range is relative to the worksheet. 
+Returns a range containing the single cell specified by the zero-indexed row and column numbers. Note that the returned object is a range representing the single cell requested. The `address`, `columnIndex`, `rowIndex`, etc. property values of the returned range are relative to the worksheet. 
 
 #### Syntax
 
@@ -124,8 +122,8 @@ rangeObject.getCell(row, column);
 
 Parameter      | Type   | Description
 -------------- | ------ | ------------
-`row`          | Number | Required. Row number of the cell to be retrieved. Zero indexed. 
-`col`          | Number | Required. Column number of the cell to be retrieved. Zero indexed.
+`row`          | Number | Required. Row number of the cell to be retrieved. Zero-indexed. 
+`col`          | Number | Required. Column number of the cell to be retrieved. Zero-indexed.
 
 #### Returns
 

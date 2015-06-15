@@ -76,7 +76,7 @@ ctx.executeAsync().then(function () {
 
 ### Set Chart Axis
 
- Set the  `maximum` ,  `minimum` ,  `majorunit` , `minorunit` of an axis. 
+ Set the  `maximum` ,  `minimum` ,  `majorunit` , and `minorunit` of an axis. 
 
 #### Syntax
 
@@ -100,7 +100,7 @@ chartObject.axes.valueaxis.minorunit = 0.2;
 
 #### Examples
 
-#####  Set the  `maximum`,  `minimum` ,  `majorunit` , `minorunit` of valueaxis. 
+#####  Set the  `maximum`,  `minimum` ,  `majorunit` , `minorunit` of valueAxis. 
 ```js
 var ctx = new Excel.ExcelClientContext();
 var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");	

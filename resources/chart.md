@@ -1,41 +1,40 @@
 # Chart
-Represents a chart object in a workbook.
+Represents a chart in a workbook.
 
 ## [Properties](#get-chart)
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-| `name`  | String | A String value that represents the name of a Chart object.   | Chart.Name      |
-| `height`| Number | A Number value that represents the height, in points, of the chart object. | ChartArea.Height|
-| `width` | Number | A Number value that represents the width, in points, of the chart object. | ChartArea.Width |
-| `top` | Number |a Number value that represents the distance, in points, from the top edge of the object to the top of row 1 (on a worksheet) or the top of the chart area (on a chart).| ChartArea.Top |
-| `left` | Number | a Number value that represents the distance, in points, from the left edge of the object to the left edge of column A (on a worksheet) or the left edge of the chart area (on a chart).| ChartArea.Left |
+| `name`  | String | Returns or sets the name of the chart.   | Chart.Name      |
+| `height`| Number | Returns or sets the height of the chart, in points. | ChartArea.Height|
+| `width` | Number | Returns or sets the width of the chart, in points. | ChartArea.Width |
+| `top` | Number | Returns or sets the distance, in points, from the top edge of the object to the top of row 1 (on a worksheet) or the top of the chart area (on a chart).| ChartArea.Top |
+| `left` | Number | Returns or sets the distance, in points, from the left edge of the object to the left edge of column A (on a worksheet) or the left edge of the chart area (on a chart).| ChartArea.Left |
 
 
 ## Relationships
-The Chart has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-| `title`          |[ChartTitle](chartTitle.md) Object | Returns a ChartTitle object that represents the title of the specified chart, including the text, visibility, position and formating of the title.
-| `series`         |[Chart Series Collection](chartSeriesCollection.md) |Represents a series in a chart.
-| `axes`          |[Chart Axes](chartAxes.md) Object |Represents a collection of Axes in the Chart.
-| `dataLabels`          |[Chart Data Labels](chartDataLabels.md) Object | Represents the datalabels on the chart.
-| `legend`          |[Chart Legend](chartLegend.md) Object | Returns a Legend object that represents the legend for the chart. 
-| `format`          |[Chart Area Format](chartareaformat.md) Object | Represents the format of a chart object, which includes fill(interior/background), line/border and font formatting.
+| `title`          |[ChartTitle](chartTitle.md) object | Returns a ChartTitle object that represents the title of the specified chart, including the text, visibility, position and formating of the title.
+| `series`         |[Chart Series Collection](chartSeriesCollection.md) |Returns an object that represents either a single series or collection of series in the chart.
+| `axes`          |[Chart Axes](chartAxes.md) object |Returns an object that represents a collection of all the axes in the Chart.
+| `dataLabels`          |[Chart Data Labels](chartDataLabels.md) object | Returns an object that represents a collection of all the datalabels on the chart.
+| `legend`          |[Chart Legend](chartLegend.md) object | Returns a Legend object that represents the legend for the chart. 
+| `format`          |[Chart Area Format](chartareaformat.md) object | Returns an object that represents the format of a chart object, which includes fill(interior/background), line/border and font formatting.
 
 ## Methods
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[delete()](#delete)| void     |Deletes the Chart ||
-|[setData(sourceData: string, seriesBy: string)](#setdatasourcedata-string-seriesby-string)| [Chart](Chart.md)  object |Sets the sourceData and seriesBy of a Chart.          
+|[delete()](#delete)| void     |Deletes the chart. ||
+|[setData(sourceData: string, seriesBy: string)](#setdatasourcedata-string-seriesby-string)| [Chart](Chart.md)  object |Sets the source data range for the chart.          
 
 ## API Specification 
 
 ### delete()
 
-Deletes a chart directly on the grid.
+Deletes the chart.
 
 #### Syntax
 
@@ -68,7 +67,7 @@ ctx.executeAsync().then(function () {
 
 ### setData(sourceData: string, seriesBy: string)
 
-Sets the sourceData and seriesBy of a Chart.
+Sets the source data range for the chart.
 
 #### Syntax
 
@@ -79,8 +78,8 @@ chartObject.setData(sourceData, seriesBy);
 #### Parameters
 | Parameter         | Value    |Description|
 |:-----------------|:--------|:----------|
-| `sourceData`  | String|  Sets an address or name of the Range object as the data source.|
-| `seriesBy`  | String |  Sets the way columns or rows are used as data series on the chart. Can be one of the following `Rows`, `Columns` or `Auto`.|
+| `sourceData`  | String|  The address or name of the range that contains the source data.|
+| `seriesBy`  | String |  Specifies the way columns or rows are used as data series on the chart. Can be one of the following: `Rows`, `Columns` or `Auto`.|
 
 #### Returns
 
@@ -145,13 +144,13 @@ chartObject.weight = 200;
 ```
 
 #### Properties
-| Property         | Value    |Description|
-|:-----------------|:--------|:----------|
-| `name`  | String|A String value that represents the name of a Chart object                              |
-| `height`|  Number |Returns or sets a Number value that represents the height, in points, of the object |
-| `width` |  Number |Returns or sets a Number value that represents the width, in points, of the object. | 
-| `top` |  Number |Returns or sets a Number value that represents the distance, in points, from the top edge of the object to the top of row 1 (on a worksheet) or the top of the chart area (on a chart).|
-| `left` |  Number |Returns or sets a Number value that represents the distance, in points, from the left edge of the object to the left edge of column A (on a worksheet) or the left edge of the chart area (on a chart). | 
+| Property         | Type    |Description|Notes |
+|:-----------------|:--------|:----------|:-----|
+| `name`  | String | Returns or sets the name of the chart.   | Chart.Name      |
+| `height`| Number | Returns or sets the height of the chart, in points. | ChartArea.Height|
+| `width` | Number | Returns or sets the width of the chart, in points. | ChartArea.Width |
+| `top` | Number | Returns or sets the distance, in points, from the top edge of the object to the top of row 1 (on a worksheet) or the top of the chart area (on a chart).| ChartArea.Top |
+| `left` | Number | Returns or sets the distance, in points, from the left edge of the object to the left edge of column A (on a worksheet) or the left edge of the chart area (on a chart).| ChartArea.Left |
 
 #### Returns
 

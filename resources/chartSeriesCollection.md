@@ -1,12 +1,12 @@
 # Chart Series Collection
-A collection of all the ChartSeries objects of a chart. 
+Represents a collection of all the chartSeries objects in a chart. 
 
 ## [Properties](#get-chartseries-collection)
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|`count`| Number   | Number of objects in the collection.||
-|`items`| [Chart Series](chartSeries.md) Array | A collection of all the chart objects that are part of the workbook||
+|`count`| Number   | Returns the number of series in the collection.||
+|`items`| [Chart Series](chartSeries.md) array |Returns a collection of all the series in the chart.||
 
 ## Relationships
 
@@ -18,14 +18,14 @@ The chart has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[getItemAt(index: number)](#getitematindex-number)| [ChartSeries](chartSeries.md)     |Retrieve a ChartSeries based on its position in the items[] array.||
+|[getItemAt(index: number)](#getitematindex-number)| [ChartSeries](chartSeries.md)     |Gets a ChartSeries object based on its position in the items[] array.||
 
 
 ## API Specification 
 
 ### Get ChartSeries Collection
 
-Get the ChartSeries collection. 
+Gets a collection of all the chartSeries objects in a chart. 
 
 #### Syntax
 ```js
@@ -34,10 +34,10 @@ chartObject.series;
 
 #### Properties
 
-| Property         | Type    |Description|
-|:-----------------|:--------|:----------|
-|`count`| Number   | Number of objects in the collection.|
-|`items`| [Chart Series](chartSeries.md) Array  | A collection of all the chart objects that are part of the workbook|
+| Property         | Type    |Description|Notes |
+|:-----------------|:--------|:----------|:-----|
+|`count`| Number   | Returns the number of series in the collection.||
+|`items`| [Chart Series](chartSeries.md) array |Returns a collection of all the series in the chart.||
 
 
 #### Returns
@@ -75,7 +75,7 @@ ctx.executeAsync().then(function () {
 
 ### getItemAt(index: number)
 
-Get chartSeries object properties based on its position in the items[] array. 
+Gets a ChartSeries object based on its position in the items[] array. 
 
 #### Syntax
 ```js
@@ -86,7 +86,7 @@ ChartSeriesCollection.getItemAt(index);
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `index`| Number | Required. Index or position in the items[]. Zero indexed.
+ `index`| Number | Required. Index or position in the items[] array. Zero-indexed.
 
 #### Returns
 

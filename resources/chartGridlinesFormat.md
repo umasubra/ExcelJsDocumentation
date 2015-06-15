@@ -1,11 +1,11 @@
 # Chart Gridlines Format
-Provides access to the Office Art formatting for chart Gridlines.
+Provides access to the Office Art formatting for chart gridlines.
 
 ## Properties
 None.
 
 ## Relationships
-The Chart Gridlines Format has the following relationships defined:
+The Chart Gridlines Format object has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
