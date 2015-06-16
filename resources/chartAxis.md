@@ -17,8 +17,8 @@ The Chart has the following relationships defined:
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
 | `title`          |[ChartAxisTitle](chartAxisTitle.md) Object | Represents the title of a specified axis. | Axis.AxisTitle
-| `majorGridlines` | [ChartGridlines](chartGridlines.md) Object   | Returns a Gridlines object that represents the major gridlines for the specified axis.   | Axis.MajorGridlines|
-| `minorGridlines` | [ChartGridlines](chartGridlines.md) Object   | Returns a Gridlines object that represents the minor gridlines for the specified axis.  | Axis.MinorGridlines|
+| `majorGridlines` | [ChartGridlines](chartGridlines.md) Object   | Represents a Gridlines object that represents the major gridlines for the specified axis.   | Axis.MajorGridlines|
+| `minorGridlines` | [ChartGridlines](chartGridlines.md) Object   | Represents a Gridlines object that represents the minor gridlines for the specified axis.  | Axis.MinorGridlines|
 | `format`          |[ChartAxisFormat](chartAxisFormat.md) Object | Represents the format of a chart object, which includes line/border and font formatting.
 
 ## Methods
@@ -51,7 +51,7 @@ Where, axisTypeObject could be one of the following:
 | `minimum` | Object |Returns or sets the minimum value on the value axis. Auto if left empty.  | 
 | `maximum` | Object |Returns or sets the maximum value on the value axis. Auto if left empty. | 
 | `majorunit` | Object |Returns or sets the interval between two major tick marks. Auto if left empty.  | 
-| `minorunit` | Object |eturns or sets the interval between two minor tick marks.  Auto if left empty. | 
+| `minorunit` | Object |Returns or sets the interval between two minor tick marks.  Auto if left empty. | 
 
 #### Returns
 

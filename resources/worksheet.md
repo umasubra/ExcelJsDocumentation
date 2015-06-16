@@ -5,7 +5,7 @@ Represents a worksheet in a workbook.
 
 | Property       | Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
-|`id`   | String | Returns the unique key that identifies the worksheet in the Workbook. |        |
+|`id`   | String | Returns the unique key that identifies the worksheet in the workbook. |        |
 |`position`| Number |Returns or sets the zero-based position of the worksheet within the workbook.|Worksheet.Index|
 |`name` | String |Returns the user-visible name of the worksheet.|Worksheet.Name    |
 

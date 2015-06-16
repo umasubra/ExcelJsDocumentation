@@ -161,7 +161,7 @@ workbookObject..worksheets.property;
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
 |`count`| Number   | Number of objects in the collection.|Worksheets.count|
-|`items`| [Worksheet](worksheet.md) Array | A collection of all the worksheet objects that are part of the workbook|[Worksheets.item] |
+|`items`| [Worksheet](worksheet.md) Array | A collection of all the worksheet objects that are part of the workbook.|[Worksheets.item] |
 
 
 #### Returns
