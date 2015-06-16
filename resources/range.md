@@ -1,21 +1,21 @@
 # Range
-Represents a cell, a row, a column, a selection of cells containing one or more contiguous blocks of cells. 
+Represents a cell, a row, a column, or a selection of cells containing one or more contiguous blocks of cells. 
 
 ## [Properties](#get-range)
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|`address`         |String         |Returns the range reference in A1 Style. **Address value will contain the Sheet reference (e.g., `Sheet1!A1:B4`)**|Range.Address|
-|`addressLocal`    |String         |Returns the range reference for the specified range in the language of the user.
-|`cellCount`       | Number          |Returns the number of cells in the range|Range.Count|
-|`columnIndex`     | Number          |Returns the number of the first column in the first area in the specified range. This is adjusted to be zero indexed. Read-only|Range.Column|
-|`columnCount`    | Number           |Returns the number of the first row of the first area in the range. This is adjusted to be zero-indexed. Read-only|Range.Row|
-|`formulas`         |String[][]|Represents the object's formula in A1 style notation.|Range.formula|
-|`formulasLocal`    |String[][]|Formula for the object, in the language of the user in A1 style notation.|Range.FormulaLocal|
-|`numberFormat`    |String[][]|Value that represents the format code for the object.|Range.NumberFormat
+|`address`         |String         |Returns the range reference in A1 Style. **Address value will contain the sheet reference. For example, `Sheet1!A1:B4`.**|Range.Address|
+|`addressLocal`    |String         |Returns the range reference for the range in the language of the user.
+|`cellCount`       | Number          |Returns the number of cells in the range.|Range.Count|
+|`columnIndex`     | Number          |Returns the number of the first column of the first area in the range. This is adjusted to be zero-indexed. Read-only.|Range.Column|
+|`columnCount`    | Number           |Returns the number of the first row of the first area in the range. This is adjusted to be zero-indexed. Read-only.|Range.Row|
+|`formulas`         |String[][]|Returns or sets the object's formula in A1 style notation.|Range.formula|
+|`formulasLocal`    |String[][]|Returns or sets the formula for the object, in the language of the user in A1 style notation.|Range.FormulaLocal|
+|`numberFormat`    |String[][]|Returns or sets the format code for the object.|Range.NumberFormat |
 |`rowcount`        | Number          |Returns the total number of columns in the Range selected. Read-only. |Range.Column|
-|`rowIndex`        | Number          |Returns the number of the first row of the first area in the range. This is adjusted to be zero indexed. Read-only|Range.Row|
-|`text`            |String[][]|Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel client will not affect the value returned by the API. |Range.Text|
-|`values`          |any[][]|Unformatted values of the specified range.|Range.Value2|
+|`rowIndex`        | Number          |Returns the number of the first row of the first area in the range. This is adjusted to be zero-indexed. Read-only.|Range.Row|
+|`text`            |String[][]Returns the text values of the specified range. The text value will not depend on the cell width. The # sign substitution that happens in Excel client will not affect the value returned by the API. |Range.Text|
+|`values`          |any[][]|Returns or sets the unformatted values of the specified range.|Range.Value2|
 
 ## Relationships
 Range has the following relationships defined:
@@ -37,7 +37,7 @@ The Range has the following methods defined:
 |[getCell(row: number, column: number)](#getcellrow-number-column-number)| [Range](range.md) object |Returns a range containing the single cell specified by the zero-indexed row and column numbers          
 |[getEntireColumn()](#getentirecolumn)| [Range](range.md) object |Gets an object that represents the entire column of the range. This API is valid only if the subject range object is a single cell or a column of cells.| |
 |[getEntireRow()](#getentirerow)| [Range](range.md) object |Gets an object that represents the entire row of the range. This API is valid only if the subject range object is a single cell or a row of cells.| |
-|[getUsedRange()](#getusedrange)| [Range](range.md) object |Returns the used range of the range.| |  
+|[getUsedRange()](#getusedrange)| [Range](range.md) object |Returns the used range portion of the range.| |  
 |[insert(shift: string)](#insertshift-string)|void| Inserts a cell or a range of cells into the worksheet and shifts other cells away to make space.| |
 |[select()](#select)|void| Selects the specified range in the Excel UI.| |
 
@@ -58,7 +58,7 @@ rangeObject.clear(applyTo);
 
 Parameter       | Type   | Description
 --------------- | ------ | ------------
-`applyTo` | String | Optional. `All`, `Format`, `Content`. If this option is not provided then the content and format of the range will be cleared. 
+`applyTo` | String | Optional. Specifies the scope of the clear. Possible values are: `All`, `Format`, `Content`. If this argument is omiited, then the content and format of the range will be cleared. 
 
 #### Returns
 
@@ -122,8 +122,8 @@ rangeObject.getCell(row, column);
 
 Parameter      | Type   | Description
 -------------- | ------ | ------------
-`row`          | Number | Required. Row number of the cell to be retrieved. Zero-indexed. 
-`col`          | Number | Required. Column number of the cell to be retrieved. Zero-indexed.
+`row`          | Number | Required. The row number of the cell to be retrieved. Zero-indexed. 
+`col`          | Number | Required. The column number of the cell to be retrieved. Zero-indexed.
 
 #### Returns
 
@@ -147,7 +147,7 @@ ctx.executeAsync().then(function() {
 
 ### getEntireColumn()
 
-Get an object that represents the entire column of the Range. This API is valid only if the subject range object is a single cell or a column of cells.
+Gets an object that represents the entire column of the range. This API is valid only if the subject range object is a single cell or a column of cells.
 
 #### Syntax
 
@@ -161,7 +161,7 @@ None
 #### Returns
 
 [Range](range.md) object.
-**Note: the grid properties of the Range (values, numberFormat, formula) contains `null` since the Range in question is unbounded.**
+**Note: The grid properties of the returned range (values, numberFormat, formula) will contain `null` since the range in question is unbounded.**
 #### Examples
 
 ```js
@@ -179,7 +179,7 @@ ctx.executeAsync().then(function() {
 
 ### getEntireRow()
 
-Get an object that represents the entire row of the Range. This API is valid only if the subject range object is a single cell or a row of cells.
+Gets an object that represents the entire row of the Range. This API is valid only if the subject range object is a single cell or a row of cells.
 
 #### Syntax
 
@@ -193,7 +193,7 @@ None
 #### Returns
 
 [Range](range.md) object.
-**Note: the grid properties of the Range (values, numberFormat, formula) contains `null` since the Range in question is unbounded.**
+**Note: The grid properties of the returned range (values, numberFormat, formula) will contain `null` since the range in question is unbounded.**
 #### Examples
 
 ```js
@@ -210,7 +210,7 @@ ctx.executeAsync().then(function() {
 [Back](#methods)
 
 ### getUsedRange()
-Get used-range portion within the requested Range object. 
+Returns the used range portion of the range.
 
 #### Syntax
 
@@ -243,7 +243,7 @@ ctx.executeAsync().then(function() {
 
 ### insert(shift: string)
 
-Inserts a cell or a range of cells into the worksheet and shifts other cells away to make space.
+ Inserts a cell or a range of cells into the worksheet and shifts other cells away to make space.
 
 #### Syntax
 ```js
@@ -253,7 +253,7 @@ rangeObject.insert(shift);
 
 Parameter       | Type   | Description
 --------------- | ------ | ------------
-`shift`| String | Optional. Specifies which way to shift the cells. Can be one of the following: `Right` or `Down`. If this argument is omitted, Microsoft Excel decides based on the shape of the range.
+`shift`| String | Optional. Specifies which way to shift the cells. Possible values are: `Right` or `Down`. If this argument is omitted, Microsoft Excel decides based on the shape of the range.
 
 #### Returns
 Nothing
@@ -273,7 +273,7 @@ ctx.executeAsync().then();
 
 ### select()
 
-Select the specified Range in the Excel UI.
+Selects the specified range in the Excel UI.
 
 #### Syntax
 ```js
@@ -299,7 +299,7 @@ ctx.executeAsync().then();
 
 ### Get Range
 
-Get a Range object that represents a single cell or a range of cells. 
+Gets a range object that represents a single cell or a range of cells. 
 
 #### Syntax
 
@@ -342,7 +342,7 @@ ctx.executeAsync().then(function() {
 
 ### Update Range 
 
-Set Range values, formula, number format.
+Sets rangle values, formula, number format.
 
 #### Syntax
 ```js
@@ -354,10 +354,11 @@ Where, property is one of the following Range properties that can be set.
 
 |Property          | Type          | Description                                           |
 |----------------- | -------------- | ----------------------------------------------------- |
-|`values`		   | Any[][] of strings or numbers    | Unformatted value of the specified range.	 		        |
-|`numberFormat`    | String[][] of String | Typethat represents the format code for the object. |
-|`formula`         | String[][] of String | Represents the object's formula notation.             |
-|`formulaLocal`    | String[][] of String | Formula for the object, in the language of the user.  |
+|`values`          |any[][]|Returns or sets the unformatted values of the specified range.|
+|`numberFormat`    |String[][]|Returns or sets the format code for the object.|Range.NumberFormat |
+|`columnCount`    | Number           |Returns the number of the first row of the first area in the range. This is adjusted to be zero-indexed. Read-only.|Range.Row|
+|`formulas`         |String[][]|Returns or sets the object's formula in A1 style notation.|
+|`formulasLocal`    |String[][]|Returns or sets the formula for the object, in the language of the user in A1 style notation.|
 
 #### Returns
 
@@ -388,7 +389,7 @@ ctx.executeAsync().then(function() {
 
 ### Get Range Worksheet
 
-Get Worksheet object of the current Range.
+Gets the worksheet that contains the current range.
 
 #### Syntax
 ```js

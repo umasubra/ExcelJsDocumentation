@@ -1,15 +1,15 @@
 # TableColumn
-Represents a Column in a table. The TableColumn object is a member of the TableColumns collection.
+Represents a column in a table. 
 
 ## [Properties](#get-table-column)
 
 |Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-| `id`     |  Number | A unique key that identifies the Table Column within the Table   |        |
-|`index`          |  Number | Index number of the TableColumn object within the TableColumns collection. **Zero Indexed**| ListColumn.Index|
-|`name`           | String | String value that represents the name of the Table column..| ListColumn.Name|
-|`totalsCalculation` |String | Constant value that determines the type of calculation in the Totals row of the list column. Possible values are: `Average`, `Count`, `CountNums`, `Max`, `Min`, `None`, `Sum`, `StdDev`, `Var`
-|`values`         | Array (Primitive)  | Unformatted values of the table Column. |Collection of ListColumn.Range.Value2|
+| `id`     |  Number | Returns the unique key that identifies the column within the table.   |        |
+|`index`          |  Number | Returns the index number of the column within the columns collection of the table. Zero-indexed.| ListColumn.Index|
+|`name`           | String | Returns the name of the table column.| ListColumn.Name|
+|`totalsCalculation` |String | Determines the type of calculation to use in the totals row of the column. Possible values are: `Average`, `Count`, `CountNums`, `Max`, `Min`, `None`, `Sum`, `StdDev`, `Var`|
+|`values`         | Array (Primitive)  | Returns or sets the unformatted values in the column. |Collection of ListColumn.Range.Value2|
 
 
 ## Relationships
@@ -21,17 +21,17 @@ The TableColumn has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[delete()](#delete)| void     |Deletes the column ||
-|[getDataBodyRange()](#getdatabodyrange)| [Range](range.md) Object     | Returns a Range object that is the size of the data portion of a column.||
-|[getHeaderRowRange()](#getheaderrowrange)| [Range](range.md) Object     | Returns the header Range object associated with the column.||
-|[getRange()](#getrange)| [Range](range.md) Object     | Returns the Range object associated with the column.||
-|[getTotalRowRange()](#gettotalrowrange)| [Range](range.md) Object     | Returns the Total row for a Column Object||
+|[delete()](#delete)| void     |Deletes the column from the table. ||
+|[getDataBodyRange()](#getdatabodyrange)| [Range](range.md) Object     | Gets the Range object associated with the data portion of the column.||
+|[getHeaderRowRange()](#getheaderrowrange)| [Range](range.md) Object     | Gets the Range object associated with the header of the column.||
+|[getRange()](#getrange)| [Range](range.md) Object     | Gets the Range object associated with the entire column.||
+|[getTotalRowRange()](#gettotalrowrange)| [Range](range.md) Object     | Gets the Range object associated with the totals row of the column.||
 
 ## API Specification 
 
 ### delete() 
 
-Deletes Table Column and clears the cell data from the Table Column.
+Deletes the column from the table.
 
 #### Syntax
 
@@ -57,7 +57,7 @@ ctx.executeAsync().then();
 [Back](#methods)
 
 ### getDataBodyRange() 
-Get Range object associated with the Column's data body.
+Gets the Range object associated with the data portion of the column.
 
 ```js
 tableColumnObject.getDataBodyRange();
@@ -86,7 +86,7 @@ ctx.executeAsync().then(function () {
 
 ### getHeaderRowRange()
 
-Get Range object associated with the Column's header.
+Gets the Range object associated with the header of the column.
 
 #### Syntax
 
@@ -117,7 +117,7 @@ ctx.executeAsync().then(function () {
 [Back](#methods)
 
 ### getRange() 
-Get Range object associated with the Column.
+Gets the Range object associated with the entire column.
 
 ```js
 tableColumnObject.getRange();
@@ -146,7 +146,7 @@ ctx.executeAsync().then(function () {
 
 ### getTotalRowRange() 
 
-Get Range object associated with the Column's total.
+Gets the Range object associated with the totals row of the column.
 
 #### Syntax 
 

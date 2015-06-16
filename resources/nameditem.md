@@ -1,14 +1,14 @@
 # Named Item
 
-Represents a defined name for a range of cells. Names can be either built-in names - such as Database, Print_Area, and Auto-Open - or custom names.
+Represents a defined name for a range of cells.  Names can be primitive named objects, range object, or a reference to a range. This object can be used to obtain range objects that are associated with names.
 
 ## [Properties](#get-named-item)
 
 | Property         | Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:-----|
-| `name`  | String|Returns or sets the name.| Name.Name|
+| `name`  | String|Returns the name of the named item.| Name.Name|
 | `type` | String|Returns or sets the type of reference associated with the name. Possible values are: `Range`, `String`, `Integer`, `Double`, `Boolean`. | Derived property |
-| `value`| String |Returns or sets the formula that the name is defined to refer to. For example, `=Sheet14!$B$2:$H$12`, `=4.75`. | Name.Value|
+| `value`| String |Returns the formula that the name is defined to refer to. For example, `=Sheet14!$B$2:$H$12`, `=4.75`. | Name.Value|
 | `visible` | Boolean |Returns or sets a boolean that determines whether the object is visible. | Name.Visible |
 
 ## Relationships

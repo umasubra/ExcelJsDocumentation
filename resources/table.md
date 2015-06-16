@@ -1,41 +1,41 @@
 # Table
-Represents collection of organized cells designed to make management of the data easy.
+Represents a collection of organized cells designed to make management of the data easy.
 
 ## [Properties](#get-table)
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-| `id`  |  Number | A unique key that identifies the Table object in a Workbook. Note: If the table gets deleted, Excel Workbook could re-use the id value for another Table.   |        |
-| `name`       | String| String value that represents the name of the Table object   | ListObject.Name       |
-| `showHeaders` | Boolean| Boolean to indicate whether the Header row is visible or not. This value can be set to show or remove the header row| ListObject.ShowHeaders|
-| `showTotals` | Boolean| Boolean to indicate whether the Total row is visible or not. This value can be set to show or remove the total row| ListObject.ShowTotals|
-| `style` | String | Constant that represents the Table style. Possible values include: `Light1` thru `Light21`, `Medium1` thru `Medium28`, `StyleDark1` thru `StyleDark11`|ListObject.TableStyle|
+| `id`  |  Number | Returns the unique key that identifies the table in a workbook. Note: If the table gets deleted, Excel workbook could reuse the id value for another table.   |        |
+| `name`       | String| Returns or sets the name of the table. | ListObject.Name |
+| `showHeaders` | Boolean| Returns or sets a boolean to indicate whether the header row should be visible or not. This value can be set to show or remove the header row.| ListObject.ShowHeaders|
+| `showTotals` | Boolean| Returns or sets a boolean to indicate whether the totals row should be visible or not. This value can be set to show or remove the totals row.| ListObject.ShowTotals|
+| `style` | String | Returns or sets the table style. Possible values are: `Light1` thru `Light21`, `Medium1` thru `Medium28`, `StyleDark1` thru `StyleDark11`.|ListObject.TableStyle|
 
 ## Relationships
-The Table has the following relationships defined:
+The Table object has the following relationships defined:
 
 | relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-| columns  | [TableColumn collection](tablecolumncollection.md)       |Collection of Table columns |ListObject.TableColumns  |          
-| rows      | [TableRow collection](tablerowcollection.md)         |Collection of Table rows |ListObject.ListRows      |
+| columns  | [TableColumn collection](tablecolumncollection.md)       |Represents a collection of all the columns in the table. |ListObject.TableColumns  |          
+| rows      | [TableRow collection](tablerowcollection.md)         |Represents a collection of all the rows in the table. |ListObject.ListRows      |
 
 ## Methods
 
-The Worksheet has the following methods defined:
+The Table object has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[delete()](#delete)| void     |Deletes the worksheet ||
-|[getHeaderRowRange()](#getheaderrowrange) | [Range](range.md) Object |Retrieve the Range object associated with Data Body of the Table.||
-|[getDataBodyRange()](#getdatabodyrange) | [Range](range.md) Object |Retrieve the Header Row Range object associated with the Table  ||
-|[getRange()](#getrange) | [Range](range.md) Object |Get Range object associated with the Table. ||
-|[getTotalRowRange()](#gettotalrowrange) | [Range](range.md) Object |Get Totals Range object associated with the Table. ||
+|[delete()](#delete)| void     |Deletes the table. ||
+|[getHeaderRowRange()](#getheaderrowrange) | [Range](range.md) object |Gets the Range object associated with the header row of the table.||
+|[getDataBodyRange()](#getdatabodyrange) | [Range](range.md) object |Gets the Range object associated with the body of the table.  ||
+|[getRange()](#getrange) | [Range](range.md) object |Gets the Range object associated with the entire table. ||
+|[getTotalRowRange()](#gettotalrowrange) | [Range](range.md) object |Gets the Range object associated with the totals row of the table. ||
 
 ## API Specification 
 
 ### delete()
 
-Deletes Table and clears the cell data from the Table.
+Deletes the table and clears the cell data from the table.
 
 #### Syntax
 ```js
@@ -61,7 +61,7 @@ ctx.executeAsync().then();
 
 ### getHeaderRowRange()
 
-Deletes Table and clears the cell data from the Table.
+Gets the Range object associated with the header row of the table.
 
 #### Syntax
 ```js
@@ -88,7 +88,7 @@ ctx.executeAsync().then();
 
 ### getDataBodyRange()
 
-Get Data Body Range object associated with the Table.
+Gets the Range object associated with the body of the table. 
 
 #### Syntax
 ```js
@@ -116,41 +116,10 @@ ctx.executeAsync().then(function () {
 });
 ```
 [Back](#methods)
-### getHeaderRowRange()
-
-Get Header Range object associated with the Table.
-
-#### Syntax
-```js
-tableObject.getHeaderRowRange();
-```
-
-#### Parameters
-
-None
-
-#### Returns
-
-
-[Range](range.md) object.
-
-#### Examples
-
-```js
-var tableName = 'Table1';
-var ctx = new Excel.ExcelClientContext();
-var table = ctx.workbook.tables.getItem(tableName);
-var tableHeaderRange = table.getHeaderRowRange();
-ctx.executeAsync().then(function () {
-		Console.log(tableHeaderRange.address);
-});
-```
-[Back](#methods)
-
 
 ### getRange()
 
-Get Range object associated with the Table.
+Gets the Range object associated with the entire table.
 
 #### Syntax
 ```js
@@ -181,7 +150,7 @@ ctx.executeAsync().then(function () {
 [Back](#methods)
 ### getTotalRowRange()
 
-Get Totals Range object associated with the Table.
+Gets the Range object associated with the totals row of the table.
 
 #### Syntax
 ```js
@@ -212,7 +181,7 @@ ctx.executeAsync().then(function () {
 
 ### Get Table
 
-Get Table object properties based on name. 
+Gets the table by name.
 
 #### Syntax
 
@@ -224,7 +193,7 @@ tableCollection.getItem(name);
 
 Parameter        | Type   | Description
 ---------------  | ------ | ------------
- `name`| String  | Required. Table name. 
+ `name`| String  | Required. The name of the table. 
 
 #### Syntax
 ```js
@@ -235,7 +204,7 @@ tableCollection.getItemAt(index);
 
 Parameter        | Type   | Description
 ---------------  | ------ | ------------
- `index`| Number | Required. Table index. Zero indexed.
+ `index`| Number | Required. The index of the table in the tables collection. Zero-indexed.
 
 #### Returns
 
@@ -280,9 +249,10 @@ Following properties can be updated directly.
 
 |Property      | Type   | Description      |
 |-------------- | ------ | -----------------|
-| `name`        | String | String value that represents the name of the Table object   | 
-| `showTotals`  | Boolean| Boolean to indicate whether the Total row is visible. This value can be set to show or remove the total row| 
-| `tableStyle`  | String | Constant that represents the Table style. Possible values include: `TableStyleLight1` thru `TableStyleLight21`, `TableStyleMedium1` thru `TableStyleMedium28`, `TableStyleDark1` thru `TableStyleDark11`|
+| `name`       | String| Returns or sets the name of the table. | ListObject.Name |
+| `showHeaders` | Boolean| Returns or sets a boolean to indicate whether the header row should be visible or not. This value can be set to show or remove the header row.| ListObject.ShowHeaders|
+| `showTotals` | Boolean| Returns or sets a boolean to indicate whether the totals row should be visible or not. This value can be set to show or remove the totals row.| ListObject.ShowTotals|
+| `style` | String | Returns or sets the table style. Possible values are: `Light1` thru `Light21`, `Medium1` thru `Medium28`, `StyleDark1` thru `StyleDark11`.|ListObject.TableStyle|
 
 #### Example 
 

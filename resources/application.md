@@ -6,7 +6,7 @@ Represents the Excel application that manages the workbook.
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-| `calculationMode`        | String      | Returns or sets the calculation mode to use in the workbook. Possible values are `Automatic`: Excel controls recalculation, `Manual`: Calculation is done when the user requests it, or `Semiautomatic`: Excel controls recalculation but ignores changes in tables.         |Workbook.Application.Calculation|
+| `calculationMode`        | String      | Returns the calculation mode used in the workbook. Possible values are `Automatic`: Excel controls recalculation, `Manual`: Calculation is done when the user requests it, or `Semiautomatic`: Excel controls recalculation but ignores changes in tables.         |Workbook.Application.Calculation|
 
 
 ## Relationships

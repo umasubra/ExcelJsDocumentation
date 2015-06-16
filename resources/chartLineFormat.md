@@ -5,7 +5,7 @@ Provides access to the Office Art formatting for chart line elements.
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|color| String | Returns or sets the color of lines in the chart using HTML color code. |Chart.ChartFormat.LineFormat.|
+|color| String | Returns or sets the color of lines in the chart using HTML color code representation. |Chart.ChartFormat.LineFormat.|
 
 ## Relationships
 None.
@@ -62,7 +62,7 @@ gridlinesObject.format.line.color = "#FF0000";
 #### Properties
 | Property         | Type    |Description|
 |:-----------------|:--------|:----------|
-|`color`|String|HTML color code representation of the text color. HTML color codes are strings that represents hexadecimal triplets of red, green, and blue values (#RRGGBB). e.g., `#FF0000` represents Red. ('255' red, '0' green, and '0' blue) |
+|`color`|String|Returns or sets the color of lines in the chart using HTML color code representation. HTML color codes are strings that represents hexadecimal triplets of red, green, and blue values (#RRGGBB). e.g., `#FF0000` represents Red. ('255' red, '0' green, and '0' blue) |
 
 
 #### Returns

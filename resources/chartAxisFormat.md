@@ -1,5 +1,5 @@
 # Chart Axis Format
-Provides access to the Office Art formatting for chart axis.
+Provides access to the Office Art formatting for the chart axis.
 
 ## Properties
 None.

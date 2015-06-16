@@ -1,5 +1,5 @@
 # Workbook
-Workbook is the top level object which contains related workbook objects such as worksheets, tables, ranges, etc. It can be used to list related references. 
+Represents the top-level object which contains workbook-related objects such as worksheets, tables, ranges, and so on. It can be used to list related references. 
 
 ## Properties
 
@@ -10,11 +10,11 @@ The Workbook has the following relationships defined:
 
 | Relationship    | Type    |Description|Notes |
 |:----------------|:--------|:----------|:-----|
-| application  | [Application](application.md)| Returns an object that represents the Excel application managing the workbook. |
-| names       | [NamedItem collection](nameditemCollection.md)| Collection of Named Ranges associated with the workbook  |Workbook.Names      |
-| tables       | [Table collection](tableCollection.md)        | Collection of Tables associated with the workbook        |Workbook.ListObjects|
-| worksheets   | [Worksheet collection](worksheetCollection.md)| Collection of Worksheets associated with the workbook    |Workbook.Worksheets |
-| bindings   | [Binding collection](bindingCollection.md)| A collection of all the Binding objects that are part of the workbook.    | |
+| application  | [Application](application.md)| Represents an object that represents the Excel application that manages the workbook. |
+| names       | [NamedItem collection](nameditemCollection.md)| Represents a collection of named ranges associated with the workbook.  |Workbook.Names      |
+| tables       | [Table collection](tableCollection.md)        | Represents a collection of tables associated with the workbook.       |Workbook.ListObjects|
+| worksheets   | [Worksheet collection](worksheetCollection.md)| Represents a collection of worksheets associated with the workbook.    |Workbook.Worksheets |
+| bindings   | [Binding collection](bindingCollection.md)| Represents a collection of all the binding objects that are part of the workbook.    | |
 
 ## Methods
 
@@ -22,7 +22,7 @@ The Worksheet has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[getSelectedRange()](#getselectedrange)| [Range](range.md) object |Get the currently selected Range from the Workbook. | |  
+|[getSelectedRange()](#getselectedrange)| [Range](range.md) object |Gets the currently selected range from the workbook. | |  
 
 ## API Specification 
 
@@ -30,7 +30,7 @@ The Worksheet has the following methods defined:
 
 ### getSelectedRange()
 
-Get the currently selected Range from the Workbook. 
+Gets the currently selected range from the workbook. 
 
 #### Syntax
 ```js

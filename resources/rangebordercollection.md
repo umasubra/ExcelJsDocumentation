@@ -1,13 +1,13 @@
 # Range Border Collection 
 
-Represents the border objects that make up Range border. 
+Represents the collection of border objects that belong to a range. 
 
 ## [Properties](#get-border-collection)
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|`count`| Number   | Number of objects in the collection.|range.borders.count|
-|`items`| [Range Border](rangeborder.md) Array | A collection of all the border objects of the Range.|ListObjects |
+|`count`| Number   | Returns the number of border objects in the collection.|range.borders.count|
+|`items`| [Range Border](rangeborder.md) array |  Returns a collection of all the border objects that belong to a range.|ListObjects |
 
 ## Relationships
 
@@ -19,13 +19,13 @@ The border collection has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[getItem(name: string)](#getitemname-string)| [border](rangeborder.md) Object      |Retrieve a border object using its name||
+|[getItem(name: string)](#getitemname-string)| [border](rangeborder.md) Object      |Gets a RangeBorder object by name.||
 
 ## API Specification 
 
 ### Get border Collection
 
-Get properties of the border collection. 
+Gets the properties of the border collection. 
 
 #### Syntax
 ```js
@@ -36,8 +36,8 @@ rangeObject.borders.property;
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|`count`| Number   | Number of objects in the collection.|borders.count|
-|`items`| [Range Border](rangeborder.md) Array | A collection of all the border objects of the range.|[borders.item] |
+|`count`| Number   | Returns the number of border objects in the collection.|range.borders.count|
+|`items`| [Range Border](rangeborder.md) array |  Returns a collection of all the border objects that belong to a range.|ListObjects |
 
 
 #### Returns
@@ -80,7 +80,7 @@ ctx.executeAsync().then(function () {
 
 ### Set Range Border 
 
-Sets border to a range and sets the Color, LineStyle, and Weight properties for the new border.
+Sets the border to a range and sets the Color, LineStyle, and Weight properties for the new border.
 
 #### Syntax
 ```js
@@ -92,10 +92,9 @@ Where, property is one of the following Range's border properties that can be se
 
 Property       | Type   | Description
 --------------- | ------ | ------------
-`lineStyle`| String | One of the constants of LineStyle specifying the line style for the border. Options are: `Continuous`: Continuous line, `Dash`: Dashed line, `DashDot`: Alternating dashes and dots, `DashDotDot`: Dash followed by two dots, `Dot`: Dotted line, `Double`: Double line, `None`: No line, `SlantDashDot`: Slanted dashes.|Border.LineStyle
-`weight`| String | BorderWeight value that specifies the weight of the border around a range. Options are: `Hairline`: Hairline (thinnest border), `Medium`: Medium, `Thick`: Thick (widest border), `Thin`: Thin.|Border.Weight
-`color`| String | HTML color code representing the color of the border line|Border.Color's representation in HTML color code.
-
+|lineStyle| String | Returns or sets the line style for the border. Possible values are: `Continuous`: Continuous line, `Dash`: Dashed line, `DashDot`: Alternating dashes and dots, `DashDotDot`: Dash followed by two dots, `Dot`: Dotted line, `Double`: Double line, `None`: No line, `SlantDashDot`: Slanted dashes.|Border.LineStyle|
+|weight| String | Returns or sets the weight of the border around a range. Possible values are: `Hairline`: Hairline (thinnest border), `Medium`: Medium, `Thick`: Thick (widest border), `Thin`: Thin.|Border.Weight|
+|color| String | Returns or sets the color of the border line using HTML color code representation. |Border.Color's representation in HTML color code.|
 
 **sideIndex values:**
 
@@ -129,7 +128,7 @@ ctx.executeAsync().then();
 
 ### getItem(name: string)
 
-Get border object properties based on name.
+Gets the border object by name.
 
 #### Syntax
 ```js

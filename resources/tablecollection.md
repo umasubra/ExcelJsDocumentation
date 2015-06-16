@@ -1,13 +1,13 @@
 # Table Collection
 
-A collection of all the table objects that are part of the workbook. 
+Represents a collection of all the tables that are part of the workbook. 
 
 ## [Properties](#get-table-collection)
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|`count`| Number   | Number of objects in the collection.|ListObjects.count|
-|`items`| [Table](table.md) Array | A collection of all the table objects that are part of the workbook|[ListObjects.item] |
+|`count`| Number   | Returns the number of bindings in the collection.|ListObjects.count|
+|`items`| [Table](table.md) array | Returns a collection of all the tables that are part of the workbook.|[ListObjects.item] |
 
 ## Relationships
 
@@ -20,14 +20,14 @@ The table collection has the following methods defined:
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
 |[add(address: string, hasHeaders: bool)](#addaddress-string-hasheaders-bool)| [Table](table.md) Object | Creates a new table.||
-|[getItem(name: string)](#getitemname-string)| [Table](table.md) Object      |Retrieve a table object using its name||
-|[getItemAt(index: number)](#getitematindex-number)| [Table](table.md) Object     |Retrieve a table based on its position in the items[] array.||
+|[getItem(name: string)](#getitemname-string)| [Table](table.md) Object      |Gets a table by name.||
+|[getItemAt(index: number)](#getitematindex-number)| [Table](table.md) Object     |Gets a table based on its position in the items[] array.||
 
 ## API Specification 
 
 ### add(address: string, hasHeaders: bool)
 
-Create a New Table object. The range source address determines the worksheet under which the table will be added. 
+Create a new table. The range source address determines the worksheet under which the table will be added. 
 
 #### Syntax
 ```js
@@ -37,11 +37,11 @@ tableCollection.add(name, rangeSource, containsHeader, showTotals, tableStyle);
 
 |Parameter       | Type   | Description
 |--------------- | ------ | ------------
-|`name`  | String | Optional. String value representing the name of the Table.
-|`rangeSource`| String | Required. Address or name of the Range object representing the data source.
-|`containsHeader` | Boolean | Optional. Boolean value that indicates whether the data being imported has column labels. If the Source does not contain headers (i.e,. when this property set to `false`), Excel will automatically generate headers. If this property value is not set, Excel will determine the header row on its own.
-|`showTotals` | Boolean| Optional. Boolean to indicate whether the Total row is visible. This value can be set to show or remove the total row. By default this will be set to `false` 
-|`tableStyle` | String | Optional. Constant that represents the Table style. Possible values include: `Light1` thru `Light21`, `Medium1` thru `Medium28`, `Dark1` thru `Dark11`. Excel determines the default style if one is not specified. 
+|`name`  | String | Optional. The name of the table.|
+|`rangeSource`| String | Required. The address or name of the range that is the data source for the table.|
+|`containsHeader` | Boolean | Optional. A boolean that indicates whether the data being imported has column headers. If the source does not contain headers (that is, when this property set to `false`), Excel will automatically generate headers. If this property is not set, Excel will determine the header row on its own.|
+|`showTotals` | Boolean| Optional. A boolean that indicatea whether the totals row is visible. This value can be set to show or remove the total row. By default, this will be set to `false` . |
+|`tableStyle` | String | Optional. The table style. Possible values are: `Light1` thru `Light21`, `Medium1` thru `Medium28`, `Dark1` thru `Dark11`. Excel determines the default style if one is not specified. |
 
 #### Returns
 [Table](table.md) object.
@@ -62,7 +62,7 @@ ctx.executeAsync().then(function () {
 
 ### getItem(name: string)
 
-Get table object properties based on name.
+Gets the table by name.
 
 #### Syntax
 ```js
@@ -73,7 +73,7 @@ tableCollection.getItem(name);
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `name`| String | Required. table name. 
+ `name`| String | Required. The table name. 
 
 #### Returns
 
@@ -93,7 +93,7 @@ ctx.executeAsync().then(function () {
 
 ### getItemAt(index: number)
 
-Get table object properties based on its position in the items[] array. 
+Gets the table based on its position in the items[] array. 
 
 #### Syntax
 ```js
@@ -104,7 +104,7 @@ tableCollection.getItemAt(index);
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `index`| Number | Required. Index or position in the items[]. Zero indexed.
+ `index`| Number | Required. The Index or position in the items[] array. Zero-indexed.
 
 #### Returns
 
@@ -122,7 +122,7 @@ ctx.executeAsync().then(function () {
 
 ### Get table Collection
 
-Get properties of the table collection. 
+Gets the table collection. 
 
 #### Syntax
 ```js
@@ -133,8 +133,8 @@ tableCollection.property;
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|`count`| Number   | Number of objects in the collection.|tables.count|
-|`items`| Object[] | A collection of all the table objects that are part of the workbook|[tables.item] |
+|`count`| Number   | Returns the number of bindings in the collection.|ListObjects.count|
+|`items`| [Table](table.md) array | Returns a collection of all the tables that are part of the workbook.|[ListObjects.item] |
 
 
 #### Returns

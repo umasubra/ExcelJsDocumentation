@@ -1,5 +1,5 @@
 # Reference Collection
-Reference collection allows add-ins to add and remove temporary references on range.
+Represents a collection of temporary references to ranges, used and managed by Office add-ins.
 
 ## Properties
 None.
@@ -15,13 +15,13 @@ The Reference collection has the following methods defined:
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
 |[add(rangeObject: Range)](#addrangeobject-range)| Null             |Creates a new reference on a range.  ||
-|[remove(rangeObject: Range)](#removerangeobject-range)| Null             |Remove a reference on the range.  ||
+|[remove(rangeObject: Range)](#removerangeobject-range)| Null             |Remove a reference to a range from the collection.  ||
 
 
 ## API Specification 
 
 ### add(rangeObject: range)
-Add a range object to the reference collection. 
+Adds a reference to a range to the reference collection. 
 
 #### Syntax
 ```js
@@ -32,7 +32,7 @@ referenceCollection.add(rangeObject);
 
 Parameter       | Type   | Description
 --------------- | ------ | ------------
-`rangeObject`  | [Range](range.md)| The Range Object which needs to be added to the reference collection.
+`rangeObject`  | [Range](range.md)| The Range object to be added to the reference collection.
 
 #### Returns
 Null
@@ -57,7 +57,7 @@ ctx.executeAsync().then(function () {
 
 ### remove(rangeObject: range)
 
-Remove a reference object from the collection. 
+Removes a reference from the collection. 
 
 #### Syntax
 ```js
@@ -68,7 +68,7 @@ referenceCollection.remove(rangeObject);
 
 Parameter       | Type   | Description
 --------------- | ------ | ------------
-`rangeObject`  | [Range](range.md)| The Range Object which needs to be removed from the reference collection.
+`rangeObject`  | [Range](range.md)| The Range object to be removed from the reference collection.
 
 #### Returns
 Null

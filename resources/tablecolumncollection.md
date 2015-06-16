@@ -1,12 +1,12 @@
 # tablecolumn Collection
-A collection of all the tablecolumn objects that are part of the table. 
+Represents a collection of all the columns that are part of the table. 
 
 ## [Properties](#get-tablecolumn-collection)
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|`count`| Number   | Number of objects in the collection.|tablecolumns.count|
-|`items`| [Table Column](tablecolumn.md) Array | A collection of all the tablecolumn objects that are part of the table|[tablecolumns.item] |
+|`count`| Number   | Returns the number of columns in the table.|tablecolumns.count|
+|`items`| [Table Column](tablecolumn.md) array | Returns a collection of all the column objects that are part of the table.|[tablecolumns.item] |
 
 ## Relationships
 
@@ -18,16 +18,16 @@ The tablecolumn collection has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[add(index: number, values: any[][])](#index-number-values-any)| [Table Column](tablecolumn.md) Object             |Creates a new tablecolumn.  ||
-|[getItem(param: string or number)](#getitemparam-string-or-number)| [Table Column](tablecolumn.md) Object     |Retrieve a tablecolumn object using its name||
-|[getItemAt(index: number)](#getitematindex-number)| [tablecolumn](tablecolumn.md) Object|Retrieve a tablecolumn based on its position in the items[] array.||
+|[add(index: number, values: any[][])](#index-number-values-any)| [Table Column](tablecolumn.md) Object             |Adds a new column to the table.  ||
+|[getItem(param: string or number)](#getitemparam-string-or-number)| [Table Column](tablecolumn.md) Object     |Gets a column object by name.||
+|[getItemAt(index: number)](#getitematindex-number)| [tablecolumn](tablecolumn.md) Object|Gets a column object based on its position in the items[] array.||
 
 
 ## API Specification 
 
 ### add(index: number, values: any[][])
 
-Add a new column to the table. 
+Adds a new column to the table.  
 
 #### Syntax
 ```js
@@ -36,8 +36,8 @@ tableColumnCollection.add(values, index);
 
 Parameter       | Type   | Description
 --------------- | ------ | ------------
-`values` | any[][] | Required. 2-D array of unformatted values of the table column.
-`index` |  Number | Optional. Specifies the relative position of the new column. The previous column at this position is shifted outward to the right. If not specified, the addition happens at the end.  Note: The index value should be equal to or less than the last column's index value. In other words, this API cannot be used to append a column at the end of the table. **Zero Indexed**.
+`values` | any[][] | Required. A 2-D array of unformatted values of the table column.
+`index` |  Number | Optional. Specifies the relative position of the new column. The previous column at this position is shifted outward to the right. If not specified, the addition happens at the end.  Note: The index value should be equal to or less than the last column's index value. In other words, this API cannot be used to append a column at the end of the table.  Zero-indexed.
 
 #### Returns
 [Range](range.md) object.
@@ -62,7 +62,7 @@ ctx.executeAsync().then(function () {
 
 ### getItem(param: string or number)
 
-Get tablecolumn object properties based on name.
+Gets a column object by name.
 
 #### Syntax
 ```js
@@ -73,7 +73,7 @@ tableColumnCollection.getItem(param);
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `param`| String | Required. tablecolumn name or id. 
+ `param`| String | Required. The name or id of the column. 
 
 #### Returns
 
@@ -92,7 +92,7 @@ ctx.executeAsync().then(function () {
 
 ### getItemAt(index: number)
 
-Get tablecolumn object properties based on its position in the items[] array. 
+Gets a column object based on its position in the items[] array.
 
 #### Syntax
 ```js
@@ -103,7 +103,7 @@ tableColumnCollection.getItemAt(index);
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `index`| Number | Required. Index or position in the items[]. Zero indexed.
+ `index`| Number | Required. The index or position in the items[] array. Zero-indexed.
 
 #### Returns
 
@@ -122,7 +122,7 @@ ctx.executeAsync().then(function () {
 
 ### Get tablecolumn Collection
 
-Get properties of the tablecolumn collection. 
+Gets the column object. 
 
 #### Syntax
 ```js
@@ -133,8 +133,8 @@ tableColumnCollection.property;
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|`count`| Number   | Number of objects in the collection.|tablecolumns.count|
-|`items`| [Table Column](tablecolumn.md) Array | A collection of all the tablecolumn objects that are part of the table|[tablecolumns.item] |
+|`count`| Number   | Returns the number of columns in the table.|tablecolumns.count|
+|`items`| [Table Column](tablecolumn.md) array | Returns a collection of all the column objects that are part of the table.|[tablecolumns.item] |
 
 #### Returns
 

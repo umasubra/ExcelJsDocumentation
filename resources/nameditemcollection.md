@@ -1,5 +1,5 @@
 # NamedItem Collection
-Represents the collection of all the [NamedItem](namedItem.md) objects that are part of the workbook. 
+Represents the collection of all the named item objects that are part of the workbook. 
 
 ## [Properties](#get-nameditem-collection)
 

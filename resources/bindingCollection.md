@@ -1,5 +1,5 @@
 # Binding Collection
-Represents the collection of all the [Binding](binding.md) objects that are part of the workbook. 
+Represents the collection of all the binding objects that are part of the workbook. 
 
 ## [Properties](#get-binding-collection)
 

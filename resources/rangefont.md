@@ -1,20 +1,20 @@
 ﻿# Range Font
 
-This object represents the font attributes (font name, font size, color, and so on) for an object. 
+Represents the font attributes (font name, font size, color, and so on) for a range.
 
 ## [Properties](#get-range-font)
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|`name`|String|Font name (e.g., "Calibri")|Range.Font.Name|
-|`size`|Integer|Size of the font (e.g., 11)|Range.Font.Size|
-|`color`|String|HTML color code representation of the text color. HTML color codes are strings that represents hexadecimal triplets of red, green, and blue values (#RRGGBB). e.g., `#FF0000` represents Red. ('255' red, '0' green, and '0' blue) |Conversion from Range.Font.Color value to html color string|
-|`italic`|Boolean|Represents the bold status of italic. true if the font style is italic|Range.Font.Italic|
-|`bold`|Boolean|Represents the bold status of font. true if the font is bold. |Range.Font.Bold|
-|`strikethrough`|Boolean|true if the font is struck through with a horizontal line. false by default.|Range.Font.Strikethrough|
-|`subscript`|Boolean|true if the font is formatted as subscript. false by default.|Range.Font.Subscript|
-|`superscript`|Boolean|true if the font is formatted as superscript; false by default.|Range.Font.Superscript  |
-|`underline`|String|Type of underline applied to the font. Can be one of the following constants. Possible Values: `None`, `Single`, `Double`, `SingleAccounting`, `DoubleAccounting`|Range.Font.Underline|
+|`name`|String|Returns or sets the name of the font. For example, `Calibri`.||
+|`size`|number|Returns or sets the size of the font. For example, 11.||
+|`color`|String|Returns or sets the text color using HTML color code representation. HTML color codes are strings that represents hexadecimal triplets of red, green, and blue values (#RRGGBB). For example, `#FF0000` represents Red. ('255' red, '0' green, and '0' blue). ||
+|`italic`|Boolean|Returns or sets a boolean that represents the bold status of italic. True if the font style is italic.||
+|`bold`|Boolean|Returns or sets a  boolean that represents the bold status of the font. True if the font is bold. ||
+|`strikethrough`|Boolean| Returns or sets a boolean. True if the font is struck through with a horizontal line. False by default.|Range.Font.Strikethrough|
+|`subscript`|Boolean|Returns or sets a boolean. True if the font is formatted as subscript. False by default.|Range.Font.Subscript|
+|`superscript`|Boolean|Returns or sets a boolean. True if the font is formatted as superscript. False by default.|Range.Font.Superscript  |
+|`underline`|Boolean|Returns or sets the type of underline applied to the font. Can be one of the following constants: `None`, `Single`, `Double`, `SingleAccounting`, `DoubleAccounting`||
 
 ## Relationships
 None
@@ -27,7 +27,7 @@ None
 
 ### Get Range Font 
 
-Get Range's font information. This information is obtained by navigating to the font relation.
+Gets the font attributes (font name, font size, color, and so on) for a range
 
 #### Syntax
 
@@ -58,7 +58,7 @@ ctx.executeAsync().then(function() {
 
 ### Set Range Font 
 
-Set range's font properties.
+Sets the font formatting for a range.
 
 #### Syntax
 ```js
@@ -70,18 +70,18 @@ Where, property is one of the following properties that can be set.
 
 | Property         | Type    |Description| 
 |:-----------------|:--------|:----------|
-|`name`|String|Font name (e.g., "Calibri")| 
-|`size`|Integer|Size of the font (e.g., 11)|
-|`color`|String|HTML color code representation of the text color. HTML color codes are strings that represents hexadecimal triplets of red, green, and blue values (#RRGGBB). e.g., `#FF0000` represents Red. ('255' red, '0' green, and '0' blue) |
-|`italic`|Boolean| Represents the bold status of italic. `true` if the font style is italic|
-|`bold`|Boolean| Represents the bold status of font. `true` if the font is bold. |
-|`strikethrough`|Boolean| `true` if the font is struck through with a horizontal line. `false` by default.| 
-|`subscript`|Boolean| `true` if the font is formatted as subscript. `false` by default.| 
-|`superscript`|Boolean| `true` if the font is formatted as superscript; `false` by default.|
-|`underlineStyle`|String|Type of underline applied to the font. Can be one of the following constants. Possible Values: `None`, `Single`, `Double`, `SingleAccounting`, `DoubleAccounting`)|
+|`name`|String|Returns or sets the name of the font. For example, `Calibri`.||
+|`size`|number|Returns or sets the size of the font. For example, 11.||
+|`color`|String|Returns or sets the text color using HTML color code representation. HTML color codes are strings that represents hexadecimal triplets of red, green, and blue values (#RRGGBB). For example, `#FF0000` represents Red. ('255' red, '0' green, and '0' blue). ||
+|`italic`|Boolean|A boolean that represents the bold status of italic. True if the font style is italic.||
+|`bold`|Boolean|A boolean that represents the bold status of the font. True if the font is bold. ||
+|`strikethrough`|Boolean| True if the font is struck through with a horizontal line. False by default.|Range.Font.Strikethrough|
+|`subscript`|Boolean|True if the font is formatted as subscript. False by default.|Range.Font.Subscript|
+|`superscript`|Boolean|True if the font is formatted as superscript. False by default.|Range.Font.Superscript  |
+|`underline`|Boolean|Returns or sets the type of underline applied to the font. Can be one of the following constants: `None`, `Single`, `Double`, `SingleAccounting`, `DoubleAccounting`||
 
 #### Example
-The example below sets font name. 
+The example below sets the font name. 
 
 ```js
 var sheetName = "Sheet1";

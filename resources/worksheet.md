@@ -1,13 +1,13 @@
 # Worksheet
-The Worksheet object is a member of the Worksheets collection. The Worksheets collection contains all the Worksheet objects in a workbook.
+Represents a worksheet in a workbook.
 
 ## [Properties](#get-worksheet)
 
 | Property       | Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
-|`id`   | String | A unique key that identifies the Worksheet object in a Workbook. |        |
-|`position`| Number |The zero-based position of the worksheet within the workbook|Worksheet.Index|
-|`name` | String |The user-visible name of the worksheet|Worksheet.Name    |
+|`id`   | String | Returns the unique key that identifies the worksheet in the Workbook. |        |
+|`position`| Number |Returns or sets the zero-based position of the worksheet within the workbook.|Worksheet.Index|
+|`name` | String |Returns the user-visible name of the worksheet.|Worksheet.Name    |
 
 
 ## Relationships
@@ -15,8 +15,8 @@ The Worksheet has the following relationships defined:
 
 | Relationship     | Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|         
-|charts | [Chart collection](chartcollection.md) |Collection of charts in the worksheet|Worksheet.ChartObject  |       
-|tables | [Table collection](tablecollection.md) |Collection of Tables in the worksheet|Worksheet.ListObjects  |       
+|charts | [Chart collection](chartcollection.md) |Represents a collection of charts in the worksheet.|Worksheet.ChartObject  |       
+|tables | [Table collection](tablecollection.md) |Represents a collection of tables in the worksheet.|Worksheet.ListObjects  |       
 
 ## Methods
 
@@ -24,17 +24,17 @@ The Worksheet has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[activate()][activate-link]| void     |Activates the worksheet |   |
-|[delete()][deleteobject-link]| void     |Deletes the worksheet ||
-|[getCell(row: number, column: number)][getcell-link]| [Range](range.md) object |Returns a range containing the single cell specified by the zero-indexed row and column numbers          
-|[getRange(address: string)][getrange-link]| [Range](range.md) object |Returns the range specified by the address| |
-|[getUsedRange()][getusedrange-link]| [Range](range.md) object |Returns the used range of the worksheet| |  
+|[activate()][activate-link]| void     |Activates the worksheet. |   |
+|[delete()][deleteobject-link]| void     |Deletes the worksheet from the workbook. ||
+|[getCell(row: number, column: number)][getcell-link]| [Range](range.md) object |Gets a range object containing the single cell specified by the zero-indexed row and column numbers. |        
+|[getRange(address: string)][getrange-link]| [Range](range.md) object |Gets a range object specified by the address.| |
+|[getUsedRange()][getusedrange-link]| [Range](range.md) object |Gets a range object for the used range of the worksheet.| |  
 
 ## API Specification 
 
 ### activate()
 
-Make the worksheeet active in the Excel UI.
+Activates the worksheet and makes the worksheeet active in the Excel UI.
 
 #### Syntax
 
@@ -60,7 +60,7 @@ ctx.executeAsync().then();
 
 ### delete()
 
-Delete a worksheet from the workbook. 
+Deletes the worksheet from the workbook. 
 
 #### Syntax
 ```js
@@ -86,7 +86,7 @@ ctx.executeAsync().then();
 
 
 ### getCell(row: number, column: number)
-Get the Cell (as a Range object) object based on row and column address relative to a top of worksheet. 
+Gets the range object containing the single cell specified by the zero-indexed row and column numbers. 
 
 #### Syntax
 
@@ -98,8 +98,8 @@ worksheetObject.getCell(row, column);
 
 Parameter      | Type   | Description
 -------------- | ------ | ------------
-`row`          | Number | Required. Row number of the cell to be retrieved. Zero indexed. 
-`col`          | Number | Required. Column number of the cell to be retrieved. Zero indexed.
+`row`          | Number | Required. The row number of the cell to be retrieved. Zero-indexed. 
+`col`          | Number | Required. The column number of the cell to be retrieved. Zero-indexed.
 
 #### Returns
 
@@ -122,7 +122,7 @@ ctx.executeAsync().then(function() {
 
 ### getRange(address: string)
 
-Get a Range object that represents a single cell or a range of cells. This API can also be used to obtain the entire range object associated with the worksheet. 
+Gets the range object specified by the address. 
 
 #### Syntax
 
@@ -133,7 +133,7 @@ worksheetObject.getRange(address);
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `address`| String | Optional. Address or the name of the Range. If not specified, the entire worksheet range is returned. 
+ `address`| String | Optional. The address or the name of the range. If not specified, the entire worksheet range is returned. 
 
 #### Returns
 
@@ -190,7 +190,7 @@ ctx.executeAsync().then(function() {
 
 ### getUsedRange()
 
-Get the used-range of a worksheet. 
+Gets a range object for the used range of the worksheet.
 
 #### Syntax
 ```js
@@ -231,7 +231,7 @@ worksheetCollection.getItem(param);
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `param`| String | Required. Worksheet name or id. 
+ `param`| String | Required. The worksheet name or id. 
 
 #### Returns
 

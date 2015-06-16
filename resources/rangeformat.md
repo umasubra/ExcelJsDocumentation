@@ -1,21 +1,21 @@
 # Range Format
 
-Format object represents format settings of a Range. This includes Font, fill, Borders, Alignment, Style, etc. 
+Provides access to the Office Art formatting for the range.
 
 ## [Properties](#get-range-format)
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|`horizontalAlignment`    | String  |Represents the horizontal alignment for the specified object. The value of this property can be to one of the following constants: `General`, `Fill`, `CenterAcrossSelection`, `Center`, `Distributed`, `Justify`, `Left`, `Right`. `null` indicates that the entire range doesn't have uniform horizontal alignment.|Range.HorizontalAlignment|
-|`verticalAlignment`    | String  |Represents the vertical alignment for the specified object. The value of this property can be to one of the following constants: `Bottom`, `Center`, `Distributed`, `Justify`, `Top`. `null` indicates that the entire range doesn't have uniform vertical alignment.|Range.VerticalAlignment|
-|`wrapText`    | Boolean  |Indicates if Excel wraps the text in the object. `null` indicates that the entire range doesn't have uniform wrap setting|Range.WrapText|
+|`horizontalAlignment`    | String  |Returns or sets the horizontal alignment for the range. Possible values are: `General`, `Fill`, `CenterAcrossSelection`, `Center`, `Distributed`, `Justify`, `Left`, `Right`. A return value of `null` indicates that the entire range doesn't have a uniform horizontal alignment.|Range.HorizontalAlignment|
+|`verticalAlignment`    | String  |Returns or sets the vertical alignment for the range. Possible values are: `Bottom`, `Center`, `Distributed`, `Justify`, `Top`. A return value of `null` indicates that the entire range doesn't have a uniform vertical alignment.|Range.VerticalAlignment|
+|`wrapText`    | Boolean  |Returns or sets a boolean that indicates if Excel should wrap the text in the range. A return value of `null` indicates that the entire range doesn't have a uniform wrap setting. |Range.WrapText|
 
 
 ## Relationships
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|`borders`         |[Range Border collection](rangebordercollection.md)|Collection of border objects that apply to the overall Range selected|Range.Borders|
-|`font`            |[Range Font](rangefont.md) Object                |Returns the Font object defined on the overall Range selected|Range.Font|
-|`fill`      |[Range Fill](rangefill.md) Object    |Returns the fill object defined on the overall Range selected|Range.Interior||
+|`borders`         |[Range Border collection](rangebordercollection.md)|Represents a collection of border objects that apply to the range. |Range.Borders|
+|`font`            |[Range Font](rangefont.md) Object                |Represents the font object defined on the range. |Range.Font|
+|`fill`      |[Range Fill](rangefill.md) Object    |Represents the fill object defined on the range.|Range.Interior||
 
 ## Methods
 
@@ -25,7 +25,7 @@ None
 
 ### Get Range Format 
 
-Get Range's format and styling details such as font, border, fill information. This information is obtained by navigating to the font, fill or borders relations. 
+Gets access to the Office Art formatting for the range.
 
 #### Syntax
 
@@ -47,7 +47,7 @@ Note: Depending on the need, you can select one or more of the format objects.
 
 #### Examples
 
-Below example selects all of the Range's format properties. 
+Below example selects all of the range's format properties. 
 
 ```js
 var sheetName = "Sheet1";
@@ -67,7 +67,7 @@ ctx.executeAsync().then(function() {
 
 ### Set Range Format 
 
-Set relevant format objects to update the Range Font, fill, alignment, and Wrap settings.
+Set the formatting for a range.
 
 #### Syntax
 ```js
@@ -81,29 +81,29 @@ Where, property is one of the following Range's Format properties that can be se
 
 | Property         | Type    |Description|
 |:-----------------|:--------|:----------| 
-|`horizontalAlignment`    | String  |Optional. Represents the horizontal alignment for the specified object. The value of this property can be to one of the following constants: `Center`, `Distributed`, `Justify`, `Left`, `Right`. `null` indicates that the entire range doesn't have uniform horizontal alignment.|Range.HorizontalAlignment|
-|`verticalAlignment`    | String  |Optional. Represents the vertical alignment for the specified object. The value of this property can be to one of the following constants: `Bottom`, `Center`, `Distributed`, `Justify`, `Top`. `null` indicates that the entire range doesn't have uniform vertical alignment.|Range.VerticalAlignment|
-|`wrapText`    | Boolean  |Optional. Indicates if Excel wraps the text in the object. `null` indicates that the entire range doesn't have uniform wrap setting|Range.WrapText|    
+|`horizontalAlignment`    | String  |Returns or sets the horizontal alignment for the range. Possible values are: `General`, `Fill`, `CenterAcrossSelection`, `Center`, `Distributed`, `Justify`, `Left`, `Right`. A return value of `null` indicates that the entire range doesn't have a uniform horizontal alignment.|Range.HorizontalAlignment|
+|`verticalAlignment`    | String  |Returns or sets the vertical alignment for the range. Possible values are: `Bottom`, `Center`, `Distributed`, `Justify`, `Top`. A return value of `null` indicates that the entire range doesn't have a uniform vertical alignment.|Range.VerticalAlignment|
+|`wrapText`    | Boolean  |Returns or sets a boolean that indicates if Excel should wrap the text in the range. A return value of `null` indicates that the entire range doesn't have a uniform wrap setting. |Range.WrapText|   
 
 [Range Font](rangefont.md)
 
 | Property         | Type    |Description| 
 |:-----------------|:--------|:----------|
-|`name`|String|Font name (e.g., "Calibri")| 
-|`size`|Integer|Size of the font (e.g., 11)|
-|`color`|String|HTML color code representation of the text color. HTML color codes are strings that represents hexadecimal triplets of red, green, and blue values (#RRGGBB). e.g., `#FF0000` represents Red. ('255' red, '0' green, and '0' blue) |
-|`italic`|Boolean| Represents the bold status of italic. `true` if the font style is italic|
-|`bold`|Boolean| Represents the bold status of font. `true` if the font is bold. |
-|`strikethrough`|Boolean| `true` if the font is struck through with a horizontal line. `false` by default.| 
-|`subscript`|Boolean| `true` if the font is formatted as subscript. `false` by default.| 
-|`superscript`|Boolean| `true` if the font is formatted as superscript; `false` by default.|
-|`underlineStyle`|String|Type of underline applied to the font. Can be one of the following constants. Possible Values: `None`, `Single`, `Double`, `SingleAccounting`, `DoubleAccounting`)|
+|`name`|String|Returns or sets the name of the font. For example, `Calibri`.||
+|`size`|number|Returns or sets the size of the font. For example, 11.||
+|`color`|String|Returns or sets the text color using HTML color code representation. HTML color codes are strings that represents hexadecimal triplets of red, green, and blue values (#RRGGBB). For example, `#FF0000` represents Red. ('255' red, '0' green, and '0' blue). ||
+|`italic`|Boolean|A boolean that represents the bold status of italic. True if the font style is italic.||
+|`bold`|Boolean|A boolean that represents the bold status of the font. True if the font is bold. ||
+|`strikethrough`|Boolean| True if the font is struck through with a horizontal line. False by default.|Range.Font.Strikethrough|
+|`subscript`|Boolean|True if the font is formatted as subscript. False by default.|Range.Font.Subscript|
+|`superscript`|Boolean|True if the font is formatted as superscript. False by default.|Range.Font.Superscript  |
+|`underline`|Boolean|Returns or sets the type of underline applied to the font. Can be one of the following constants: `None`, `Single`, `Double`, `SingleAccounting`, `DoubleAccounting`||
 
 [Range fill](rangefill.md)
 
 | Property         | Type    |Description|
 |:-----------------|:--------|:----------| 
-|`color`|String|HTML color code representation of the fill color. HTML color codes are strings that represents hexadecimal triplets of red, green, and blue values (#RRGGBB). e.g., `#FF0000` represents Red. ('255' red, '0' green, and '0' blue) |
+|`color`|String|Returns or sets the fill color using HTML color code representation. HTML color codes are strings that represents hexadecimal triplets of red, green, and blue values (#RRGGBB). For example, `#FF0000` represents Red. ('255' red, '0' green, and '0' blue) |Conversion from Range.Interior.Color value to html color string|
 
 #### Example
 The example below sets font name, fill color and wraps text. 
@@ -122,7 +122,7 @@ ctx.executeAsync().then();
 
 ### Set Range Border 
 
-Sets border to a range and sets the Color, LineStyle, and Weight properties for the new border.
+Sets the border to a range and sets the Color, LineStyle, and Weight properties for the new border.
 
 #### Syntax
 ```js
@@ -134,16 +134,16 @@ Where, property is one of the following Range's border properties that can be se
 
 Property       | Type   | Description
 --------------- | ------ | ------------
-`lineStyle`| String | One of the constants of LineStyle specifying the line style for the border. Options are: `Continuous`: Continuous line, `Dash`: Dashed line, `DashDot`: Alternating dashes and dots, `DashDotDot`: Dash followed by two dots, `Dot`: Dotted line, `Double`: Double line, `None`: No line, `SlantDashDot`: Slanted dashes.|Border.LineStyle
-`weight`| String | BorderWeight value that specifies the weight of the border around a range. Options are: `Hairline`: Hairline (thinnest border), `Medium`: Medium, `Thick`: Thick (widest border), `Thin`: Thin.|Border.Weight
-`color`| String | HTML color code representing the color of the border line|Border.Color's representation in HTML color code.
+|lineStyle| String | Returns or sets the line style for the border. Possible values are: `Continuous`: Continuous line, `Dash`: Dashed line, `DashDot`: Alternating dashes and dots, `DashDotDot`: Dash followed by two dots, `Dot`: Dotted line, `Double`: Double line, `None`: No line, `SlantDashDot`: Slanted dashes.|Border.LineStyle|
+|weight| String | Returns or sets the weight of the border around a range. Possible values are: `Hairline`: Hairline (thinnest border), `Medium`: Medium, `Thick`: Thick (widest border), `Thin`: Thin.|Border.Weight|
+|color| String | Returns or sets the color of the border line using HTML color code representation. |Border.Color's representation in HTML color code.|.
 
 
 **sideIndex values:**
 
 `sideIndex` values | Type  | Description
 --------------- | ------ | ------------
-`DiagonalDown`  |String | Border running from the upper left-hand corner to the lower right of each cell in the range. 
+`DiagonalDown`  |String |Border running from the upper left-hand corner to the lower right of each cell in the range. 
 `DiagonalUp`    |String |Border running from the lower left-hand corner to the upper right of each cell in the range.
 `EdgeBottom`    |String |Border at the bottom of the range.
 `EdgeLeft`      |String |Border at the left-hand edge of the range.

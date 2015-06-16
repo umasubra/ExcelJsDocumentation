@@ -1,12 +1,12 @@
 # Worksheet Collection
-A collection of all the worksheet objects that are part of the workbook. 
+Represents a collection of all the worksheet objects that are part of the workbook. 
 
 ## [Properties](#get-worksheet-collection)
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|`count`| Number   | Number of objects in the collection.|Worksheets.count|
-|`items`| [Worksheet](worksheet.md) Array | A collection of all the worksheet objects that are part of the workbook|[Worksheets.item] |
+|`count`| Number   | Returns the number of worksheets in the workbook.|Worksheets.count|
+|`items`| [Worksheet](worksheet.md) array | Returns a collection of all the worksheet objects that are part of the workbook.|[Worksheets.item] |
 
 ## Relationships
 
@@ -18,17 +18,17 @@ The Worksheet collection has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[add(name: string)](#addname-string)| [Worksheet](worksheet.md) Object              |Creates a new worksheet. The new worksheet becomes the active workbook. ||
-|[getActiveWorksheet()](#getactiveworksheet)| [Worksheet](worksheet.md) object |Get the currently active worksheet in the workbook.| |
-|[getItem(param: string)](#getitemparam-string)| [Worksheet](worksheet.md) Object      |Retrieve a worksheet object using its name||
-|[getItemAt(index: number)](#getitematindex-number)| [Worksheet](worksheet.md) Object     |Retrieve a worksheet based on its position in the items[] array.||
+|[add(name: string)](#addname-string)| [Worksheet](worksheet.md) Object              |Adds a new worksheet. The new worksheet becomes the active sheet in the workbook. ||
+|[getActiveWorksheet()](#getactiveworksheet)| [Worksheet](worksheet.md) object |Gets the currently active worksheet in the workbook.| |
+|[getItem(param: string)](#getitemparam-string)| [Worksheet](worksheet.md) Object      |Gets a worksheet object by name.||
+|[getItemAt(index: number)](#getitematindex-number)| [Worksheet](worksheet.md) Object     |Gets a worksheet object based on its position in the items[] array.||
 
 
 ## API Specification 
 
 ### add(name: string)
 
-Add a new worksheet to the workbook. The worksheet will be added at the end of existing worksheets.
+Adds a new worksheet to the workbook. The worksheet will be added at the end of existing worksheets and the new worksheet becomes the active sheet in the workbook.
 
 #### Syntax
 ```js
@@ -39,7 +39,7 @@ worksheetCollection.add(name);
 
 Parameter       | Type   | Description
 --------------- | ------ | ------------
-`name`  | String| Optional. String value representing the name of the sheet to be added. If not specified, Excel determines the name of the new worksheet being added. 
+`name`  | String| Optional. The name of the sheet to be added. If not specified, Excel determines the name of the new worksheet being added. 
 
 #### Returns
 [Worksheet](worksheet.md) object.
@@ -59,7 +59,7 @@ ctx.executeAsync().then(function () {
 
 ### getActiveWorksheet()
 
-Get the currently active worksheet in the workbook.
+Gets the currently active worksheet in the workbook.
 
 #### Syntax
 ```js
@@ -87,7 +87,7 @@ ctx.executeAsync().then(function () {
 
 ### getItem(param: string)
 
-Get Worksheet object properties based on name or id.
+Gets a worksheet object by name or id.
 
 #### Syntax
 ```js
@@ -98,7 +98,7 @@ worksheetCollection.getItem(param);
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `param`| String | Required. Worksheet name or id. 
+ `param`| String | Required. The name or id of the worksheet. 
 
 #### Returns
 
@@ -118,7 +118,7 @@ ctx.executeAsync().then(function () {
 
 ### getItemAt(index: number)
 
-Get Worksheet object properties based on its position in the items[] array. 
+Gets a worksheet object based on its position in the items[] array. 
 
 #### Syntax
 ```js
@@ -129,7 +129,7 @@ worksheetCollection.getItemAt(index);
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `index`| Number | Required. Index or position in the items[]. Zero indexed.
+ `index`| Number | Required. The index or position in the items[] array. Zero-indexed.
 
 #### Returns
 

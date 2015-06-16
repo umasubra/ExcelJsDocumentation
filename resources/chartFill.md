@@ -12,7 +12,7 @@ None
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
 |[setSolidColor(color: string)](#setsolidcolorcolor-string)|void |Sets the fill formatting of a chart element to a uniform color.
-|[clear()](#clear)|void |Clear the fill format of a chart element.
+|[clear()](#clear)|void |Clears the fill format of a chart element.
 
 
 
@@ -28,7 +28,7 @@ ChartObject.format.fill.setSolidColor("#FF0000");
 #### Parameters
 | Property         | Type    |Description|
 |:-----------------|:--------|:----------|
-|`color`|String|HTML color code representation of the text color. HTML color codes are strings that represents hexadecimal triplets of red, green, and blue values (#RRGGBB). For example, `#FF0000` represents Red. ('255' red, '0' green, and '0' blue). |
+|`color`|String|Returns or sets the text color using HTML color code representation. HTML color codes are strings that represents hexadecimal triplets of red, green, and blue values (#RRGGBB). For example, `#FF0000` represents Red. ('255' red, '0' green, and '0' blue). |
 
 
 #### Returns
@@ -51,7 +51,7 @@ ctx.executeAsync().then(function () {
 
 ### clear()
 
-Clear the fill format of a chart element.
+Clears the fill format of a chart element.
 
 #### Syntax
 Use chart major gridlines on value axis as an example.

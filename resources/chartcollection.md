@@ -19,8 +19,8 @@ The chart has the following methods defined:
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
 |[add(type: string, sourceData: string, seriesBy: string)](#addtype-string-sourcedata-string-seriesby-string)| [Chart](chart.md) object              |Creates a new chart. The new chart becomes the active workbook. ||
-|[getItem(name: string)](#getitemname-string)| [Chart](chart.md) object     |Gets a Chart object by id.||
-|[getItemAt(index: number)](#getitematindex-number)| [Chart](chart.md) object    |Gets a Chart object based on its position in the items[] array.||
+|[getItem(name: string)](#getitemname-string)| [Chart](chart.md) object     |Gets a chart by id.||
+|[getItemAt(index: number)](#getitematindex-number)| [Chart](chart.md) object    |Gets a chart based on its position in the items[] array.||
 
 
 ## API Specification 
@@ -112,7 +112,7 @@ ctx.executeAsync().then(function () {
 
 ### getItem(name: string)
 
-Gets the properties of the chart object by name.
+Gets the properties of the chart by name.
 
 #### Syntax
 ```js
@@ -143,7 +143,7 @@ ctx.executeAsync().then(function () {
 
 ### getItemAt(index: number)
 
-Gets the properties of the chart object based on its position in the items[] array. 
+Gets the properties of the chart based on its position in the items[] array. 
 
 #### Syntax
 ```js

@@ -1,35 +1,34 @@
 # TableRow
-
-Represents a row in a table. The TableRow object is a member of the TableRows collection.
+Represents a row in a table. 
 
 ## [Properties](#get-table-row)
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-| `index`          |  Number | Index number of the TableRow object within the TableRows collection. **Zero Indexed**.| ListRow.Index|
-| `values`         | Array (Primitive)  | Unformatted values of the table row. |Collection of ListRow.Range.Value2|
+| `index`          |  Number | Returns the index number of the row within the rows collection of the table. Zero-indexed.| ListRow.Index|
+| `values`         | Array (Primitive)  | Returns or sets the unformatted values in the column. |Collection of ListRow.Range.Value2|
 
 ## Relationships
 The TableRow has the following relationships defined:
 
 | Relationships    | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-| `range`  | [Range](range.md) Object |Returns a Range object associated with the Table Row.|ListRow.Range|
+| `range`  | [Range](range.md) Object |Returns a Range object associated with the table row.|ListRow.Range|
 
 ## Methods
 The TableRow has the following methods defined:
 
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
-|[delete()](#delete)| void     |Deletes the row ||
-|[getRange()](#getrange)| [Range](range.md) Object     | Returns the Range object associated with the row.||
+|[delete()](#delete)| void     |Deletes the row. ||
+|[getRange()](#getrange)| [Range](range.md) Object     | Returns the range object associated with the row.||
 
 
 ## API Specification 
 
 ### delete()  
 
-Deletes Table Row and clears the cell data from Table row.
+Deletes the row from the table.
 
 #### Syntax
 
@@ -56,7 +55,7 @@ ctx.executeAsync().then();
 
 ### getRange() 
 
-Get Range object associated with the Row.
+Returns the range object associated with the row.
 
 #### Syntax
 ```js
@@ -97,7 +96,7 @@ tableRowsCollection.getItem(index);
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `index`| Number | Row index of the row that you wish to get. Zero indexed.
+ `index`| Number | The row index of the row that you wish to get. Zero-indexed.
 
 #### Returns
 

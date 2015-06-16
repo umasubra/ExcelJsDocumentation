@@ -1,12 +1,12 @@
 # tablerow Collection
-A collection of all the tablerow objects that are part of the table. 
+Represents a collection of all the rows that are part of the table.
 
 ## [Properties](#get-tablerow-collection)
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|`count`| Number   | Number of objects in the collection.|tablerows.count|
-|`items`| [Table Row](tablerow.md) Array | A collection of all the tablerow objects that are part of the table|[tablerows.item] |
+|`count`| Number   | Returns the number of rows in the table.|tablerows.count|
+|`items`| [Table Row](tablerow.md) Array | Returns a collection of all the row objects that are part of the table.|[tablerows.item] |
 
 ## Relationships
 
@@ -19,19 +19,19 @@ The tablerow collection has the following methods defined:
 | Method     | Return Type    |Description|Notes  |
 |:-----------------|:--------|:----------|:------|
 <<<<<<< HEAD
-|[add(index: number, values: any[][])](#index-number-values-any)| [Table Row](tablerow.md) Object  |Creates a new tablerow. ||
-|[getItem(name: string)](#getitemname-string)| [Table Row](tablerow.md) Object |Retrieve a tablerow object using its name||
+|[add(index: number, values: any[][])](#index-number-values-any)| [Table Row](tablerow.md) Object  |Adds a new row to the table.||
+|[getItem(name: string)](#getitemname-string)| [Table Row](tablerow.md) Object ||Gets a row object by name.||
 =======
-|[add(values: any[][], index: number)](#addvalues-any-index-number)| [Table Row](tablerow.md) Object  |Creates a new tablerow. ||
+|[add(values: any[][], index: number)](#addvalues-any-index-number)| [Table Row](tablerow.md) Object  |Adds a new row to the table. ||
 >>>>>>> 8fcb47ff7422ac46ccb364ef484b77e8c5ba109a
-|[getItemAt(index: number)](#getitematindex-number)| [Table Row](tablerow.md) Object |Retrieve a tablerow based on its position in the items[] array.||
+|[getItemAt(index: number)](#getitematindex-number)| [Table Row](tablerow.md) Object |Gets a row object based on its position in the items[] array.||
 
 ## API Specification 
 
 
 ### add(index: number, values: any[][])
 
-Add a new row to the table. 
+Adds a new row to the table.
 
 #### Syntax
 ```js
@@ -40,8 +40,8 @@ tableRowCollection.add(values, values);
 #### Parameters 
 Parameter       | Type   | Description
 --------------- | ------ | ------------
-`values` | any[][] | 2-D array of unformatted values of the table row. 
-`index` |  Number |Optional. Specifies the relative position of the new row. If not specified, the addition happens at the end. The previous column at this position is shifted outward to the bottom. **Zero Indexed**
+`values` | any[][] | A 2-D array of unformatted values of the table row. 
+`index` |  Number |Optional. Specifies the relative position of the new row. If not specified, the addition happens at the end. The previous column at this position is shifted outward to the bottom. Zero-indexed.
 
 
 #### Returns
@@ -66,7 +66,7 @@ ctx.executeAsync().then(function () {
 
 ### getItemAt(index: number)
 
-Get tablerow object properties based on its position in the items[] array. 
+Gets a row object based on its position in the items[] array. 
 
 #### Syntax
 ```js
@@ -77,7 +77,7 @@ tableRowCollection.getItemAt(index);
 
 Parameter       | Type  | Description
 --------------- | ------ | ------------
- `index`| Number | Required. Index or position in the items[]. Zero indexed.
+ `index`| Number | Required. The index or position in the items[] array. Zero-indexed.
 
 #### Returns
 
@@ -96,7 +96,7 @@ ctx.executeAsync().then(function () {
 
 ### Get tablerow Collection
 
-Get properties of the tablerow collection. 
+Get the properties of the tablerow collection. 
 
 #### Syntax
 ```js
@@ -107,8 +107,8 @@ tableRowCollection.property;
 
 | Property         | Type    |Description|Notes |
 |:-----------------|:--------|:----------|:-----|
-|`count`| Number   | Number of objects in the collection.|tablerows.count|
-|`items`| [Table Row](tablerow.md) Array  | A collection of all the tablerow objects that are part of the table|[tablerows.item] |
+|`count`| Number   | Returns the number of rows in the table.|tablerows.count|
+|`items`| [Table Row](tablerow.md) Array | Returns a collection of all the row objects that are part of the table.|[tablerows.item] |
 
 
 #### Returns

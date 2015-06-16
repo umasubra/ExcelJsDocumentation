@@ -5,7 +5,7 @@ Represents a binding that is defined in the workbook.
 
 | Property       | Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
-|`id`   | String | Returns the name of the binding that was specified at the time of its definition. | Read-only.   |       
+|`id`   | String | Returns the name of the binding that was specified at the time of definition. | Read-only.   |       
 |`type`| String |Returns the type of the binding. Can be `Table`,`Range` or `Text`. | Read-only. |
 
 
@@ -123,7 +123,7 @@ bindingObject.type;
 | Property       | Type    |Description|Notes |
 |:---------------|:--------|:----------|:-----|
 |`id`   | String | Returns the name of the binding that was specified at the time of its definition. | Read-only.   |       
-|`type`| String |Returns the type of the binding. Can be `Table`,`Range` or `Text`. | Read-only. |
+|`type`| String |Returns the type of the binding. Can be `Table`, `Range` or `Text`. | Read-only. |
 
 
 #### Returns
